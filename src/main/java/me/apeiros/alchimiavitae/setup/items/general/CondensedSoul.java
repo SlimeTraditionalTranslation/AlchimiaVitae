@@ -14,7 +14,7 @@ public class CondensedSoul extends SlimefunItem {
 
         super(c, Items.CONDENSED_SOUL, RecipeTypes.SOUL_COLLECTOR_TYPE, new ItemStack[] {
                 null, null, null,
-                null, new CustomItem(Material.DROWNED_SPAWN_EGG, "&bAny Mob"), null,
+                null, new CustomItem(Material.DROWNED_SPAWN_EGG, "&b任何怪物"), null,
                 null, null, null
         });
 

@@ -107,8 +107,8 @@ public class DivineAltar extends AbstractContainer {
 
         // Invalid recipe
         if (output == null) {
-            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>That recipe is invalid!")));
-            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>Please try again.")));
+            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>該配方無效!")));
+            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>請再試一次.")));
             return;
         }
 
@@ -148,7 +148,7 @@ public class DivineAltar extends AbstractContainer {
 
                         // Send message
                         p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse(
-                                "<gradient:#50fa75:#3dd2ff>Successful craft!</gradient>")));
+                                "<gradient:#50fa75:#3dd2ff>成功製作!</gradient>")));
                     }, 30);
                 }, 30);
             }, 30);

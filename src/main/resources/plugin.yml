@@ -5,7 +5,7 @@ name: AlchimiaVitae
 author: Apeiros
 
 ## CHANGE this to a meaninful but short description of your plugin.
-description: Slimefun addon that adds magic, alchemy and herbalism
+description: 黏液科技附加 煉金術自傳 繁體翻譯版.
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
 main: me.apeiros.alchimiavitae.AlchimiaVitae

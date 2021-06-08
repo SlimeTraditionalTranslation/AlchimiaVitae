@@ -122,7 +122,7 @@ public class AltarOfInfusion extends AbstractContainer {
 
         // Invalid Infusion
         if (infusion == null) {
-            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>That is not a valid Infusion!")));
+            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>那不是有效的注入!")));
             return;
         }
 
@@ -148,7 +148,7 @@ public class AltarOfInfusion extends AbstractContainer {
                 // Valid item
             } else {
                 // Invalid item
-                p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>You cannot infuse that tool!")));
+                p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>你無法對此工具進行注入!")));
                 return;
             }
         }
@@ -175,7 +175,7 @@ public class AltarOfInfusion extends AbstractContainer {
                 container.has(bowInfusionVolatile, PersistentDataType.BYTE) ||
                 container.has(bowInfusionHealing, PersistentDataType.BYTE)) {
             // Tool is already infused
-            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>You have already applied an Infusion to this item!")));
+            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>你已經對這件物品添加了注入物!")));
             return;
         }
 
@@ -193,30 +193,30 @@ public class AltarOfInfusion extends AbstractContainer {
             // Add lines to lore
             lore.add("");
             lore.add(BukkitComponentSerializer.legacy().serialize(
-                    MM.parse("<gray>Infusion:")));
+                    MM.parse("<gray>注入物:")));
 
             // Add infusion name to lore
             if (axeInfusionDestructiveCrits.equals(infusion)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
-                        MM.parse("<dark_gray>› <red><bold>Destructive Criticals")));
+                        MM.parse("<dark_gray>› <red><bold>破壞性爆擊")));
             } else if (axeInfusionPhantomCrits.equals(infusion)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
-                        MM.parse("<dark_gray>› <aqua>Phantom Criticals")));
+                        MM.parse("<dark_gray>› <aqua>幻影性爆擊")));
             } else if (bowInfusionTrueAim.equals(infusion)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
-                        MM.parse("<dark_gray>› <light_purple>True Aim")));
+                        MM.parse("<dark_gray>› <light_purple>真正的自動瞄準")));
             } else if (bowInfusionForceful.equals(infusion)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
-                        MM.parse("<dark_gray>› <dark_green>Forceful")));
+                        MM.parse("<dark_gray>› <dark_green>強力性")));
             } else if (bowInfusionVolatile.equals(infusion)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
-                        MM.parse("<dark_gray>› <dark_red><bold>Volatility")));
+                        MM.parse("<dark_gray>› <dark_red><bold>揮發性")));
             } else if (bowInfusionHealing.equals(infusion)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
-                        MM.parse("<dark_gray>› <red>Healing")));
+                        MM.parse("<dark_gray>› <red>治療性")));
             } else if (hoeInfusionAutoReplant.equals(infusion)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
-                        MM.parse("<dark_gray>› <green>Automatic Re-plant")));
+                        MM.parse("<dark_gray>› <green>自動化重種")));
             }
 
             // Set lore and meta
@@ -235,18 +235,18 @@ public class AltarOfInfusion extends AbstractContainer {
             // Add lines to lore
             lore.add("");
             lore.add(BukkitComponentSerializer.legacy().serialize(
-                    MM.parse("<gray>Infusion:")));
+                    MM.parse("<gray>注入物:")));
 
             // Add infusion name to lore
             lore.add(BukkitComponentSerializer.legacy().serialize(
-                    MM.parse("<dark_gray>› <gold><bold>Battery of Totems")));
+                    MM.parse("<dark_gray>› <gold><bold>圖騰電池")));
 
             // Set lore and meta
             meta.setLore(lore);
             tool.setItemMeta(meta);
         } else {
             // Tool cannot be infused
-            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>You cannot apply this infusion to this item!")));
+            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>你不能將此注入物添加於該物品!")));
             return;
         }
 
@@ -289,7 +289,7 @@ public class AltarOfInfusion extends AbstractContainer {
 
                     // Send message
                     p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse(
-                            "<gradient:#50fa75:#3dd2ff>Your item has been infused!</gradient>")));
+                            "<gradient:#50fa75:#3dd2ff>你的物品已被注入!</gradient>")));
                 }, 30);
             }, 30);
         }, 30);

@@ -47,7 +47,7 @@ public class InfusionTotemRightClickListener implements Listener {
 
                     // Check if there are already 8 totems
                     if (totemsStored >= 8) {
-                        e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>There is no more space for this Totem!")));
+                        e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>沒有更多空間可以裝此圖騰!")));
                     }
 
                     // Remove the totem in the hand
@@ -59,8 +59,8 @@ public class InfusionTotemRightClickListener implements Listener {
                     e.getPlayer().getInventory().getChestplate().setItemMeta(meta);
 
                     // Send a message to the player
-                    e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<green>Your Totem has been added to the Battery of Totems.")));
-                    e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<green>There are now " + totemsStored + " Totems stored.")));
+                    e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<green>你的圖騰已被添加至圖騰電池中.")));
+                    e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<green>現在有 " + totemsStored + " 圖騰已儲存.")));
 
                     // Play effects
                     e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.ITEM_ARMOR_EQUIP_GOLD, 1, 1);
