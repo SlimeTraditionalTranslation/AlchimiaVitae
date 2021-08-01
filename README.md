@@ -6,6 +6,11 @@
 此為**非官方**版本, 請勿在該作者的問題追蹤內回報!
 [原作者連結](https://github.com/Apeiros-46B/AlchimiaVitae)
 
+# 下載
+非官方繁體中文版: https://xmikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master/ <br>
+官方構鍵: https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/
+![Build status](https://xmikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master/badge.svg)
+
 ### 特徵:
 - 暗和光魔法植物
   - 用於釀造藥水

@@ -27,17 +27,16 @@ public class AlchimiaVitae extends AbstractAddon implements SlimefunAddon {
 
     @SneakyThrows
     @Override
-    public void onEnable() {
+    public void enable() {
         // Instance and super
         instance = this;
-        super.onEnable();
 
         // Setup items and listeners
         Setup.setup(instance);
     }
 
     @Override
-    public void onDisable() {
+    public void disable() {
         // Set instance to null
         instance = null;
     }
@@ -45,6 +44,12 @@ public class AlchimiaVitae extends AbstractAddon implements SlimefunAddon {
     @Override
     @Nullable
     protected Metrics setupMetrics() {
+        return null;
+    }
+
+    @org.jetbrains.annotations.Nullable
+    @Override
+    public String getAutoUpdatePath() {
         return null;
     }
 
