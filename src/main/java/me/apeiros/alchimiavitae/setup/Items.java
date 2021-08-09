@@ -3,11 +3,13 @@ package me.apeiros.alchimiavitae.setup;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
+import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.utils.PotionUtils;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import net.kyori.adventure.text.serializer.craftbukkit.BukkitComponentSerializer;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.configuration.Configuration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -24,6 +26,8 @@ public class Items {
             Material.DIAMOND_SWORD, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#6baefa:#7145b0>靈魂收集者</gradient>")),
             "&b收集靈魂", "&b用這個殺死任何怪物", "&b來抽取它的靈魂");
+
+    private static final Configuration cfg = AlchimiaVitae.i().getConfig();
 
     static {
         ItemMeta meta = SOUL_COLLECTOR.getItemMeta();
@@ -145,15 +149,30 @@ public class Items {
             "&2用於釀造藥水的高級鍋釜");
 
     // Make sure to make the int pair at the end {time in seconds * 20, level}
-    private static Map<PotionEffectType, int[]> potEffectsMap = new HashMap<>();
+    private static final Map<PotionEffectType, int[]> potEffectsMap = new HashMap<>();
 
     static {
         // Add effects
-        potEffectsMap.put(PotionEffectType.DAMAGE_RESISTANCE, new int[]{6000, 1});
-        potEffectsMap.put(PotionEffectType.FAST_DIGGING, new int[]{6000, 2});
-        potEffectsMap.put(PotionEffectType.REGENERATION, new int[]{6000, 2});
-        potEffectsMap.put(PotionEffectType.SPEED, new int[]{6000, 2});
-        potEffectsMap.put(PotionEffectType.JUMP, new int[]{6000, 2});
+        potEffectsMap.put(PotionEffectType.DAMAGE_RESISTANCE, new int[]{
+                cfg.getInt("options.potions.benevolent-brew.resistance.ticks"),
+                cfg.getInt("options.potions.benevolent-brew.resistance.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.FAST_DIGGING, new int[]{
+                cfg.getInt("options.potions.benevolent-brew.haste.ticks"),
+                cfg.getInt("options.potions.benevolent-brew.haste.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.REGENERATION, new int[]{
+                cfg.getInt("options.potions.benevolent-brew.regen.ticks"),
+                cfg.getInt("options.potions.benevolent-brew.regen.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.SPEED, new int[]{
+                cfg.getInt("options.potions.benevolent-brew.speed.ticks"),
+                cfg.getInt("options.potions.benevolent-brew.speed.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.JUMP, new int[]{
+                cfg.getInt("options.potions.benevolent-brew.jump.ticks"),
+                cfg.getInt("options.potions.benevolent-brew.jump.level") - 1
+        });
     }
 
     public static final SlimefunItemStack BENEVOLENT_BREW = PotionUtils.makePotion(MM.parse(
@@ -164,11 +183,26 @@ public class Items {
         potEffectsMap.clear();
 
         // Add effects
-        potEffectsMap.put(PotionEffectType.WEAKNESS, new int[]{6000, 3});
-        potEffectsMap.put(PotionEffectType.SLOW, new int[]{3000, 2});
-        potEffectsMap.put(PotionEffectType.POISON, new int[]{600, 2});
-        potEffectsMap.put(PotionEffectType.BLINDNESS, new int[]{1200, 1});
-        potEffectsMap.put(PotionEffectType.HUNGER, new int[]{600, 2});
+        potEffectsMap.put(PotionEffectType.WEAKNESS, new int[]{
+                cfg.getInt("options.potions.malevolent-concoction.weakness.ticks"),
+                cfg.getInt("options.potions.malevolent-concoction.weakness.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.SLOW, new int[]{
+                cfg.getInt("options.potions.malevolent-concoction.slowness.ticks"),
+                cfg.getInt("options.potions.malevolent-concoction.slowness.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.POISON, new int[]{
+                cfg.getInt("options.potions.malevolent-concoction.poison.ticks"),
+                cfg.getInt("options.potions.malevolent-concoction.poison.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.BLINDNESS, new int[]{
+                cfg.getInt("options.potions.malevolent-concoction.blindness.ticks"),
+                cfg.getInt("options.potions.malevolent-concoction.blindness.level") - 1
+        });
+        potEffectsMap.put(PotionEffectType.HUNGER, new int[]{
+                cfg.getInt("options.potions.malevolent-concoction.hunger.ticks"),
+                cfg.getInt("options.potions.malevolent-concoction.hunger.level") - 1
+        });
     }
 
     public static final SlimefunItemStack MALEVOLENT_CONCOCTION = PotionUtils.makeSplashPotion(MM.parse(
@@ -177,8 +211,7 @@ public class Items {
     public static final SlimefunItemStack ALTAR_OF_INFUSION = new SlimefunItemStack("AV_ALTAR_OF_INFUSION",
             Material.LODESTONE, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#f78770:#ff607b>灌注祭壇</gradient>")),
-            "&5結合科技的祭壇", "&5和巫術來注入物品", "&5具有強大的屬性", "&6由於魔法, 我們還沒有",
-            "&6完全明白, 注入只能", "&6適用於黃金製的工具,",
-            "&6鐵, 鑽石, 或獄髓錠", "&6弓與弩也可以在這個祭壇上使用", "&6出於一些原因我們還不明白");
+            "&5結合科技的祭壇", "&5和巫術來注入物品", "&5具有強大的屬性",
+            "&d注入只能金,鐵, 鑽石, 或獄髓錠,", "&弓與弩也可以在這個祭壇上使用");
 
 }
