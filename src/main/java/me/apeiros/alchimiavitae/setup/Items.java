@@ -212,6 +212,6 @@ public class Items {
             Material.LODESTONE, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#f78770:#ff607b>灌注祭壇</gradient>")),
             "&5結合科技的祭壇", "&5和巫術來注入物品", "&5具有強大的屬性",
-            "&d只能注入金,鐵, 鑽石, 或獄髓錠,", "&弓與弩也可以在這個祭壇上使用");
+            "&d只能注入金,鐵, 鑽石, 或獄髓,", "&弓與弩也可以在這個祭壇上使用");
 
 }
