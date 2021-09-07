@@ -4,4 +4,6 @@ rules:
     upstream: Apeiros-46B:master
     mergeMethod: merge
     conflictReviewers:
+      - weiii-joe
+      - xhuanfux
       - xMikux
