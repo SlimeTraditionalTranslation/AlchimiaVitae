@@ -3,13 +3,14 @@
 
 我參加了 **2021 Slimefun Addon Jam**
 
-此為**非官方**版本, 請勿在該作者的問題追蹤內回報!
-[原作者連結](https://github.com/Apeiros-46B/AlchimiaVitae)
+> 此為**非官方**版本, 請勿在該作者問題追蹤內回報! <br>
+> [原作連結](https://github.com/Apeiros-46B/AlchimiaVitae) | [非官方Discord](https://discord.gg/GF4CwjFXT9)
 
 # 下載
-非官方繁體中文版: https://xmikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master/ <br>
-官方構鍵: https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/
-![Build status](https://xmikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master/badge.svg)
+| 非官方繁體中文版 | 官方英文版 |
+| -------- | -------- |
+| 點下方圖片下載 | 點下方圖片下載 |
+| [![Build Status](https://xMikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master/badge.svg)](https://xMikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master) | [![Build Status](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/badge.svg)](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master) |
 
 ### 特徵:
 - 暗和光魔法植物
@@ -69,3 +70,8 @@
   - 效果:
     - 允許你在一個維度中儲存最多8個不死圖騰, 並在你死亡時復活, 但隨後將會被消耗.
     - 圖騰被添加至這個電池中, 通過shift-右鍵點擊在你穿著注入此注入物的胸甲時
+- 擊退性
+  - 適用物品: 釣竿
+  - 效果:
+    - 每當實體被注入了擊退性的釣竿釣到時, 它將會被擊退而不是被拉動.
+    - 注入的釣竿魚鉤可以飛兩倍遠.

@@ -1,11 +1,11 @@
 package me.apeiros.alchimiavitae.setup;
 
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.utils.PotionUtils;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import net.kyori.adventure.text.serializer.craftbukkit.BukkitComponentSerializer;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -43,8 +43,11 @@ public class Items {
             "&b一個靈魂, 凝聚成一顆球", "&9&o也許有方法", "&9&o可以操縱它的力量...");
 
     static {
+        ItemMeta meta = CONDENSED_SOUL.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+
+        CONDENSED_SOUL.setItemMeta(meta);
         CONDENSED_SOUL.addUnsafeEnchantment(Enchantment.LUCK, 1);
-        CONDENSED_SOUL.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public static final SlimefunItemStack PLANT_INFUSION_CHAMBER = new SlimefunItemStack("AV_PLANT_INFUSION_CHAMBER",
@@ -58,32 +61,38 @@ public class Items {
     public static final SlimefunItemStack GOOD_MAGIC_PLANT = new SlimefunItemStack("AV_GOOD_MAGIC_PLANT",
             Material.OAK_SAPLING, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#2ddae0:#31f876>光魔法植物</gradient>")),
-            "&7光魔法 III", "&a散發著至高無上的光芒", "&a發光的與眾不同...");
+            "&7光魔法 I", "&a散發著至高無上的光芒", "&a發光的與眾不同...");
 
     static {
+        ItemMeta meta = GOOD_MAGIC_PLANT.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+
+        GOOD_MAGIC_PLANT.setItemMeta(meta);
         GOOD_MAGIC_PLANT.addUnsafeEnchantment(Enchantment.LUCK, 1);
-        GOOD_MAGIC_PLANT.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public static final SlimefunItemStack EVIL_MAGIC_PLANT = new SlimefunItemStack("AV_EVIL_MAGIC_PLANT",
             Material.OAK_SAPLING, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#ff5555:#ffa012>暗魔法植物</gradient>")),
-            "&7暗魔法 III", "&c包含了無數的黑暗", "&c魔法被鎖在它的木質中...");
+            "&7暗魔法 I", "&c包含了無數的黑暗", "&c魔法被鎖在它的木質中...");
 
     static {
+        ItemMeta meta = EVIL_MAGIC_PLANT.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+
+        EVIL_MAGIC_PLANT.setItemMeta(meta);
         EVIL_MAGIC_PLANT.addUnsafeEnchantment(Enchantment.LUCK, 1);
-        EVIL_MAGIC_PLANT.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public static final SlimefunItemStack GOOD_ESSENCE = new SlimefunItemStack("AV_GOOD_ESSENCE",
             Material.SUGAR, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#2ddae0:#31f876>光之精華</gradient>")),
-            "&7光魔法 III", "&a生命. 照亮身旁. ");
+            "&7光魔法 II", "&a生命. 照亮身旁. ");
 
     public static final SlimefunItemStack EVIL_ESSENCE = new SlimefunItemStack("AV_EVIL_ESSENCE",
             Material.GUNPOWDER, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#ff5555:#ffa012>暗之精華</gradient>")),
-            "&7暗魔法 III", "&c死亡. 黑暗侵蝕.");
+            "&7暗魔法 II", "&c死亡. 黑暗侵蝕.");
 
     public static final SlimefunItemStack EXP_CRYSTALLIZER = new SlimefunItemStack("AV_EXP_CRYSTALLIZER",
             Material.LIME_STAINED_GLASS, BukkitComponentSerializer.legacy().serialize
@@ -99,8 +108,11 @@ public class Items {
             "&a一大塊晶瑩剔透的經驗");
 
     static {
+        ItemMeta meta = EXP_CRYSTAL.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+
+        EXP_CRYSTAL.setItemMeta(meta);
         EXP_CRYSTAL.addUnsafeEnchantment(Enchantment.LUCK, 1);
-        EXP_CRYSTAL.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public static final SlimefunItemStack ILLUMIUM = new SlimefunItemStack("AV_ILLUMIUM",
@@ -109,8 +121,11 @@ public class Items {
             "&a它有力的在你手上散發出光芒");
 
     static {
+        ItemMeta meta = ILLUMIUM.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+
+        ILLUMIUM.setItemMeta(meta);
         ILLUMIUM.addUnsafeEnchantment(Enchantment.LUCK, 1);
-        ILLUMIUM.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public static final SlimefunItemStack DARKSTEEL = new SlimefunItemStack("AV_DARKSTEEL",
@@ -119,8 +134,11 @@ public class Items {
             "&c它散發著... 無盡的黑暗?");
 
     static {
+        ItemMeta meta = DARKSTEEL.getItemMeta();
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+
+        DARKSTEEL.setItemMeta(meta);
         DARKSTEEL.addUnsafeEnchantment(Enchantment.LUCK, 1);
-        DARKSTEEL.addFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
     public static final SlimefunItemStack DIVINE_ALTAR = new SlimefunItemStack("AV_DIVINE_ALTAR",
