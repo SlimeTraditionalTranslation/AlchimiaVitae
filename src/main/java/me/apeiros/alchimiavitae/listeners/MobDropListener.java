@@ -2,7 +2,7 @@ package me.apeiros.alchimiavitae.listeners;
 
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.apeiros.alchimiavitae.setup.Items;
-import net.kyori.adventure.text.serializer.craftbukkit.BukkitComponentSerializer;
+import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.apache.commons.lang.WordUtils;
 import org.bukkit.Sound;
 import org.bukkit.entity.EnderDragon;
@@ -51,7 +51,7 @@ public class MobDropListener implements Listener {
                 killer.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<aqua>你提取一個靈魂從 <gradient:#6baefa:#7145b0>" + mobName + "</gradient><aqua>!")));
                 killer.playSound(killer.getLocation(), Sound.ENTITY_ILLUSIONER_MIRROR_MOVE, 1,1);
 
-                if (e.getEntity() instanceof Wither /*(1.17) || e.getEntity() instanceof Warden */) {
+                if (e.getEntity() instanceof Wither /*(1.19) || e.getEntity() instanceof Warden */) {
                     for (int i = 0; i < r.nextInt(9); i++) {
                         e.getDrops().add(Items.CONDENSED_SOUL);
                     }
