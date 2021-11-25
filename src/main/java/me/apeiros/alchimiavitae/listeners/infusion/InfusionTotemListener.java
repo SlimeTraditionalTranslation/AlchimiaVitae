@@ -2,7 +2,7 @@ package me.apeiros.alchimiavitae.listeners.infusion;
 
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.items.crafters.AltarOfInfusion;
-import net.kyori.adventure.text.serializer.craftbukkit.BukkitComponentSerializer;
+import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
 import org.bukkit.EntityEffect;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -51,6 +51,7 @@ public class InfusionTotemListener implements Listener {
                     // Check if there are already 8 totems
                     if (totemsStored >= 8) {
                         e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>沒有更多空間可以裝此圖騰!")));
+                        e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1F, 1F);
                         return;
                     }
 
@@ -107,14 +108,17 @@ public class InfusionTotemListener implements Listener {
                                 container.set(AltarOfInfusion.TOTEM_STORAGE, PersistentDataType.INTEGER, totemsStored);
                                 p.getInventory().getChestplate().setItemMeta(meta);
 
-                                // Add potion effects and heal by half a heart
+                                // Add potion effects, add absorption, and heal by half a heart
                                 p.setHealth(1);
                                 p.setAbsorptionAmount(4);
-                                p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 45, 2));
-                                p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 40, 1));
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 900, 2));
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 800, 1));
 
                                 // Totem visual effects
                                 p.playEffect(EntityEffect.TOTEM_RESURRECT);
+
+                                // Custom effects
+                                p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BEACON_DEACTIVATE, 0.5F, 1F);
                             }
                         }
                     }
