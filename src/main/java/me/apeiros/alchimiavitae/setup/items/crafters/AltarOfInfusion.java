@@ -16,7 +16,7 @@ import me.apeiros.alchimiavitae.utils.InfusionMap;
 import me.apeiros.alchimiavitae.utils.RecipeTypes;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import net.kyori.adventure.platform.bukkit.BukkitComponentSerializer;
+import net.kyori.adventure.text.serializer.craftbukkit.BukkitComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -51,6 +51,8 @@ public class AltarOfInfusion extends CraftingBlock {
     public static final NamespacedKey HEALING = AbstractAddon.createKey("infusion_healing");
     public static final NamespacedKey REPLANT = AbstractAddon.createKey("infusion_autoreplant");
     public static final NamespacedKey TOTEM_STORAGE = AbstractAddon.createKey("infusion_totemstorage");
+    public static final NamespacedKey SHIELD_DISRUPTOR = AbstractAddon.createKey("infusion_shielddisruptor");
+    public static final NamespacedKey SPIKED_HOOK = AbstractAddon.createKey("infusion_spikedhook");
     public static final NamespacedKey KNOCKBACK = AbstractAddon.createKey("infusion_knockback");
 
     // Tool categories
@@ -58,6 +60,7 @@ public class AltarOfInfusion extends CraftingBlock {
     private static final List<Material> VALID_BOW = Arrays.asList(Material.BOW, Material.CROSSBOW);
     private static final List<Material> VALID_HOE = Arrays.asList(Material.GOLDEN_HOE, Material.IRON_HOE, Material.DIAMOND_HOE, Material.NETHERITE_HOE);
     private static final List<Material> VALID_CHESTPLATE = Arrays.asList(Material.GOLDEN_CHESTPLATE, Material.IRON_CHESTPLATE, Material.DIAMOND_CHESTPLATE, Material.NETHERITE_CHESTPLATE);
+    private static final List<Material> VALID_SWORD = Arrays.asList(Material.GOLDEN_SWORD, Material.IRON_SWORD, Material.DIAMOND_SWORD, Material.NETHERITE_SWORD);
     private static final List<Material> VALID_FISHING_ROD = Collections.singletonList(Material.FISHING_ROD);
 
     // Slots
@@ -354,7 +357,8 @@ public class AltarOfInfusion extends CraftingBlock {
                     (((VALID_BOW.contains(mat) ||
                     VALID_HOE.contains(mat) ||
                     VALID_CHESTPLATE.contains(mat)) ||
-                    VALID_FISHING_ROD.contains(mat)))) {
+                    VALID_SWORD.contains(mat)) ||
+                    VALID_FISHING_ROD.contains(mat))) {
                 // Valid item
             } else {
                 // Invalid item
@@ -390,6 +394,8 @@ public class AltarOfInfusion extends CraftingBlock {
                 container.has(HEALING, PersistentDataType.BYTE) ||
                 container.has(TOTEM_STORAGE, PersistentDataType.INTEGER) ||
                 container.has(REPLANT, PersistentDataType.BYTE) ||
+                container.has(SHIELD_DISRUPTOR, PersistentDataType.BYTE) ||
+                container.has(SPIKED_HOOK, PersistentDataType.BYTE) ||
                 container.has(KNOCKBACK, PersistentDataType.BYTE)) {
             // Tool is already infused
             p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>你已經對這件物品添加了注入物!")));
@@ -434,6 +440,12 @@ public class AltarOfInfusion extends CraftingBlock {
             } else if (infusion.equals(REPLANT)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
                         MM.parse("<dark_gray>› <green>自動化重種")));
+            } else if (infusion.equals(SHIELD_DISRUPTOR)) {
+                lore.add(BukkitComponentSerializer.legacy().serialize(
+                        MM.parse("<dark_gray>› <gray>盾牌破壞者")));
+            } else if (infusion.equals(SPIKED_HOOK)) {
+                lore.add(BukkitComponentSerializer.legacy().serialize(
+                        MM.parse("<dark_gray>› <red>釘爪鉤")));
             } else if (infusion.equals(KNOCKBACK)) {
                 lore.add(BukkitComponentSerializer.legacy().serialize(
                         MM.parse("<dark_gray>› <green>擊退性")));
@@ -473,36 +485,36 @@ public class AltarOfInfusion extends CraftingBlock {
         }
 
         // Pre-craft effects
-        b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ENTITY_ILLUSIONER_PREPARE_MIRROR, 1, 1);
-        b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.BLOCK_BEACON_POWER_SELECT, 1.5F, 1);
-        b.getWorld().spawnParticle(Particle.FLASH, b.getLocation().add(0.5, 0.5, 0.5), 2, 0.1, 0.1, 0.1);
+        b.getWorld().playSound(b.getLocation(), Sound.ENTITY_ILLUSIONER_PREPARE_MIRROR, 1, 1);
+        b.getWorld().playSound(b.getLocation(), Sound.BLOCK_BEACON_POWER_SELECT, 1.5F, 1);
+        b.getWorld().spawnParticle(Particle.FLASH, b.getLocation(), 2, 0.1, 0.1, 0.1);
 
         Bukkit.getScheduler().runTaskLater(AlchimiaVitae.i(), () -> {
-            b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ENTITY_ILLUSIONER_CAST_SPELL, 1, 1);
-            b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.BLOCK_CONDUIT_ATTACK_TARGET, 0.5F, 1);
-            b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ENTITY_ILLUSIONER_PREPARE_BLINDNESS, 1, 1);
-            b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ITEM_TOTEM_USE, 0.1F, 1);
-            b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.BLOCK_BEACON_POWER_SELECT, 0.3F, 1);
-            b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.BLOCK_LODESTONE_PLACE, 1.5F, 1);
-            b.getWorld().spawnParticle(Particle.FLASH, b.getLocation().add(0.5, 0.5, 0.5), 2, 0.1, 0.1, 0.1);
+            b.getWorld().playSound(b.getLocation(), Sound.ENTITY_ILLUSIONER_CAST_SPELL, 1, 1);
+            b.getWorld().playSound(b.getLocation(), Sound.BLOCK_CONDUIT_ATTACK_TARGET, 0.5F, 1);
+            b.getWorld().playSound(b.getLocation(), Sound.ENTITY_ILLUSIONER_PREPARE_BLINDNESS, 1, 1);
+            b.getWorld().playSound(b.getLocation(), Sound.ITEM_TOTEM_USE, 0.1F, 1);
+            b.getWorld().playSound(b.getLocation(), Sound.BLOCK_BEACON_POWER_SELECT, 0.3F, 1);
+            b.getWorld().playSound(b.getLocation(), Sound.BLOCK_LODESTONE_PLACE, 1.5F, 1);
+            b.getWorld().spawnParticle(Particle.FLASH, b.getLocation(), 2, 0.1, 0.1, 0.1);
 
             Bukkit.getScheduler().runTaskLater(AlchimiaVitae.i(), () -> {
-                b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ENTITY_ILLUSIONER_MIRROR_MOVE, 1, 1);
-                b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.BLOCK_CONDUIT_ATTACK_TARGET, 1.5F, 1);
-                b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ITEM_LODESTONE_COMPASS_LOCK, 1.5F, 1);
-                b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.BLOCK_BEACON_POWER_SELECT, 0.3F, 1);
-                b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ITEM_TOTEM_USE, 0.3F, 1);
-                b.getWorld().spawnParticle(Particle.FLASH, b.getLocation().add(0.5, 0.5, 0.5), 2, 0.1, 0.1, 0.1);
+                b.getWorld().playSound(b.getLocation(), Sound.ENTITY_ILLUSIONER_MIRROR_MOVE, 1, 1);
+                b.getWorld().playSound(b.getLocation(), Sound.BLOCK_CONDUIT_ATTACK_TARGET, 1.5F, 1);
+                b.getWorld().playSound(b.getLocation(), Sound.ITEM_LODESTONE_COMPASS_LOCK, 1.5F, 1);
+                b.getWorld().playSound(b.getLocation(), Sound.BLOCK_BEACON_POWER_SELECT, 0.3F, 1);
+                b.getWorld().playSound(b.getLocation(), Sound.ITEM_TOTEM_USE, 0.3F, 1);
+                b.getWorld().spawnParticle(Particle.FLASH, b.getLocation(), 2, 0.1, 0.1, 0.1);
 
                 Bukkit.getScheduler().runTaskLater(AlchimiaVitae.i(), () -> {
                     // Post-craft effects
-                    b.getWorld().strikeLightningEffect(b.getLocation().add(0.5, 1, 0.5));
-                    b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ITEM_TRIDENT_THUNDER, 0.5F, 1);
-                    b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ENTITY_ILLUSIONER_MIRROR_MOVE, 1, 1);
-                    b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.BLOCK_BEACON_ACTIVATE, 1, 1);
-                    b.getWorld().playSound(b.getLocation().add(0.5, 0.5, 0.5), Sound.ITEM_TOTEM_USE, 0.5F, 1);
-                    b.getWorld().spawnParticle(Particle.END_ROD, b.getLocation().add(0.5, 0.5, 0.5), 5, 0, 8, 0);
-                    b.getWorld().spawnParticle(Particle.PORTAL, b.getLocation().add(0.5, 0.5, 0.5), 300, 2, 2, 2);
+                    b.getWorld().strikeLightningEffect(b.getLocation().add(0, 1, 0));
+                    b.getWorld().playSound(b.getLocation(), Sound.ITEM_TRIDENT_THUNDER, 0.5F, 1);
+                    b.getWorld().playSound(b.getLocation(), Sound.ENTITY_ILLUSIONER_MIRROR_MOVE, 1, 1);
+                    b.getWorld().playSound(b.getLocation(), Sound.BLOCK_BEACON_ACTIVATE, 1, 1);
+                    b.getWorld().playSound(b.getLocation(), Sound.ITEM_TOTEM_USE, 0.5F, 1);
+                    b.getWorld().spawnParticle(Particle.END_ROD, b.getLocation(), 5, 0, 8, 0);
+                    b.getWorld().spawnParticle(Particle.PORTAL, b.getLocation(), 300, 2, 2, 2);
 
                     // Send message
                     p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse(
@@ -520,13 +532,13 @@ public class AltarOfInfusion extends CraftingBlock {
         if (mat.isItem()) {
             if (VALID_AXE.contains(mat) &&
                     (infusion.equals(DESTRUCTIVE_CRITS) ||
-                            infusion.equals(PHANTOM_CRITS))) {
+                    infusion.equals(PHANTOM_CRITS))) {
                 return true;
             } else if (VALID_BOW.contains(mat) &&
                     (infusion.equals(TRUE_AIM) ||
-                            infusion.equals(FORCEFUL) ||
-                            infusion.equals(VOLATILE) ||
-                            infusion.equals(HEALING))) {
+                    infusion.equals(FORCEFUL) ||
+                    infusion.equals(VOLATILE) ||
+                    infusion.equals(HEALING))) {
                 return true;
             } else if (VALID_HOE.contains(mat) &&
                     infusion.equals(REPLANT)) {
@@ -534,8 +546,12 @@ public class AltarOfInfusion extends CraftingBlock {
             } else if (VALID_CHESTPLATE.contains(mat) &&
                     infusion.equals(TOTEM_STORAGE)) {
                 return true;
+            } else if (VALID_SWORD.contains(mat) &&
+                    infusion.equals(SHIELD_DISRUPTOR)) {
+                return true;
             } else if (VALID_FISHING_ROD.contains(mat) &&
-                    infusion.equals(KNOCKBACK)) {
+                    (infusion.equals(SPIKED_HOOK) ||
+                    infusion.equals(KNOCKBACK))) {
                 return true;
             } else {
                 return false;

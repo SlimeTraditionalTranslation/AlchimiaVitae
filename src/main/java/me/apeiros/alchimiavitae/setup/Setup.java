@@ -7,8 +7,8 @@ import me.apeiros.alchimiavitae.listeners.infusion.InfusionAxeListener;
 import me.apeiros.alchimiavitae.listeners.infusion.InfusionBowListener;
 import me.apeiros.alchimiavitae.listeners.infusion.InfusionFishingRodListener;
 import me.apeiros.alchimiavitae.listeners.infusion.InfusionHoeListener;
+import me.apeiros.alchimiavitae.listeners.infusion.InfusionSwordListener;
 import me.apeiros.alchimiavitae.listeners.infusion.InfusionTotemListener;
-import me.apeiros.alchimiavitae.listeners.SheepDyeListener;
 import me.apeiros.alchimiavitae.setup.items.crafters.AltarOfInfusion;
 import me.apeiros.alchimiavitae.setup.items.crafters.DivineAltar;
 import me.apeiros.alchimiavitae.setup.items.crafters.OrnateCauldron;
@@ -59,13 +59,13 @@ public class Setup {
         new AltarOfInfusion(Categories.INFUSIONS).register(p);
 
         // Listeners
-        new SheepDyeListener(p);
         new MobDropListener(p);
         new InfusionAxeListener(p);
         new InfusionBowListener(p);
         new InfusionHoeListener(p);
         new InfusionTotemListener(p);
         new InfusionFishingRodListener(p);
+        new InfusionSwordListener(p);
 
         // Researches
         setupResearches(p);
@@ -131,5 +131,17 @@ public class Setup {
                 "為你的物品注入活力的終極祭壇", 30)
                 .addItems(Items.ALTAR_OF_INFUSION)
                 .register();
+    }
+
+    private static void setupDivineAltar(AlchimiaVitae p) {
+
+    }
+
+    private static void setupOrnateCauldron() {
+
+    }
+
+    private static void setupInfusionAltar(AlchimiaVitae p) {
+
     }
 }

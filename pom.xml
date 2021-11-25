@@ -103,7 +103,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.Slimefun</groupId>
+            <groupId>io.github.Slimefun</groupId>
             <artifactId>Slimefun4</artifactId>
             <version>RC-28</version>
             <scope>provided</scope>
