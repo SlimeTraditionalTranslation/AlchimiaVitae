@@ -25,7 +25,7 @@ public class Items {
     public static final SlimefunItemStack SOUL_COLLECTOR = new SlimefunItemStack("AV_SOUL_COLLECTOR",
             Material.DIAMOND_SWORD, BukkitComponentSerializer.legacy().serialize
             (MM.parse("<gradient:#6baefa:#7145b0>靈魂收集者</gradient>")),
-            "&b收集靈魂", "&b用這個殺死任何怪物", "&b來抽取它的靈魂");
+            "&b收集靈魂", "&b用這個殺死任何怪物", "&b來抽取它的靈魂", "&a所有怪物掉落3倍經驗", "&9凋零相關的怪物", "&9將會掉落更多靈魂");
 
     private static final Configuration cfg = AlchimiaVitae.i().getConfig();
 

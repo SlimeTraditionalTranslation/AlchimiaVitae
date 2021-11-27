@@ -33,7 +33,7 @@ public class InfusionTotemListener implements Listener {
     // Click event
     @EventHandler(ignoreCancelled = true)
     public void onShiftRightClick(PlayerInteractEvent e) {
-        if (e.getPlayer().isSneaking() && e.getPlayer().getInventory().getChestplate() != null && e.getItem() != null &&
+        if (e.getPlayer().isSneaking() && e.getPlayer().getInventory().getChestplate() != null &&
                 e.getHand() == EquipmentSlot.HAND && (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK)) {
             // Get the container
             ItemMeta meta = e.getPlayer().getInventory().getChestplate().getItemMeta();
@@ -42,38 +42,46 @@ public class InfusionTotemListener implements Listener {
             if (meta != null) {
                 PersistentDataContainer container = meta.getPersistentDataContainer();
 
-                // Check if the chestplate has the container and that the item is a totem
-                if (e.getItem().isSimilar(new ItemStack(Material.TOTEM_OF_UNDYING)) &&
-                        container.has(AltarOfInfusion.TOTEM_STORAGE, PersistentDataType.INTEGER)) {
+                // Check if the chestplate has the container
+                if (container.has(AltarOfInfusion.TOTEM_STORAGE, PersistentDataType.INTEGER)) {
                     // Amount of totems stored in the chestplate
                     int totemsStored = container.get(AltarOfInfusion.TOTEM_STORAGE, PersistentDataType.INTEGER);
+                    Player p = e.getPlayer();
 
-                    // Check if there are already 8 totems
-                    if (totemsStored >= 8) {
-                        e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>沒有更多空間可以裝此圖騰!")));
-                        e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1F, 1F);
-                        return;
+                    // Check if the item is a totem
+                    if (e.getItem() != null) {
+                        if (e.getItem().isSimilar(new ItemStack(Material.TOTEM_OF_UNDYING))) {
+                            // Check if there are already 8 totems
+                            if (totemsStored >= 8) {
+                                p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<red>沒有更多空間可以裝此圖騰!")));
+                                p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1F, 1F);
+                                return;
+                            }
+
+                            // Remove the totem in the hand
+                            p.getInventory().getItemInMainHand().setAmount(0);
+
+                            // Increment the totemsStored variable, set it to the container, and set the meta to the item
+                            totemsStored++;
+                            container.set(AltarOfInfusion.TOTEM_STORAGE, PersistentDataType.INTEGER, totemsStored);
+                            p.getInventory().getChestplate().setItemMeta(meta);
+
+                            // Send a message to the player
+                            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<green>你的圖騰已被添加至圖騰電池中.")));
+                            p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse(totemsStored == 1 ? "<green>現在已存入1個圖騰." : "<green>現在有 " + totemsStored + " 個圖騰已儲存.")));
+
+                            // Play effects
+                            p.getWorld().playSound(p.getLocation(), Sound.ITEM_ARMOR_EQUIP_GOLD, 1, 1);
+                            p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BEACON_POWER_SELECT, 1, 1);
+                            p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BEACON_ACTIVATE, 0.8F, 1);
+                            p.getWorld().playSound(p.getLocation(), Sound.ENTITY_EVOKER_PREPARE_ATTACK, 1, 1);
+                            p.getWorld().playSound(p.getLocation(), Sound.ITEM_TOTEM_USE, 0.2F, 1);
+                            p.getWorld().spawnParticle(Particle.END_ROD, e.getPlayer().getLocation(), 200, 1, 2, 1);
+                        }
+                    } else {
+                        p.sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse(totemsStored == 1 ? "<green>圖騰電池中存入1個圖騰." : "<green>有 " + totemsStored + " 個圖騰已儲存在圖騰電池中.")));
+                        p.getWorld().playSound(p.getLocation(), Sound.BLOCK_BEACON_AMBIENT, 1F, 1);
                     }
-
-                    // Remove the totem in the hand
-                    e.getPlayer().getInventory().getItemInMainHand().setAmount(0);
-
-                    // Increment the totemsStored variable, set it to the container, and set the meta to the item
-                    totemsStored++;
-                    container.set(AltarOfInfusion.TOTEM_STORAGE, PersistentDataType.INTEGER, totemsStored);
-                    e.getPlayer().getInventory().getChestplate().setItemMeta(meta);
-
-                    // Send a message to the player
-                    e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse("<green>你的圖騰已被添加至圖騰電池中.")));
-                    e.getPlayer().sendMessage(BukkitComponentSerializer.legacy().serialize(MM.parse(totemsStored == 1 ? "<green>現在已存入1個圖騰." : "<green>現在有 " + totemsStored + " 圖騰已儲存.")));
-
-                    // Play effects
-                    e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.ITEM_ARMOR_EQUIP_GOLD, 1, 1);
-                    e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.BLOCK_BEACON_POWER_SELECT, 1, 1);
-                    e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.BLOCK_BEACON_ACTIVATE, 0.8F, 1);
-                    e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.ENTITY_EVOKER_PREPARE_ATTACK, 1, 1);
-                    e.getPlayer().getWorld().playSound(e.getPlayer().getLocation(), Sound.ITEM_TOTEM_USE, 0.2F, 1);
-                    e.getPlayer().getWorld().spawnParticle(Particle.END_ROD, e.getPlayer().getLocation(), 200, 1, 2, 1);
                 }
             }
         }
