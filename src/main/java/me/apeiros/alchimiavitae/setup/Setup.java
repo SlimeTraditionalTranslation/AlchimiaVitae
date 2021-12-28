@@ -2,7 +2,6 @@ package me.apeiros.alchimiavitae.setup;
 
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
-import me.apeiros.alchimiavitae.listeners.MobDropListener;
 import me.apeiros.alchimiavitae.listeners.infusion.InfusionAxeListener;
 import me.apeiros.alchimiavitae.listeners.infusion.InfusionBowListener;
 import me.apeiros.alchimiavitae.listeners.infusion.InfusionFishingRodListener;
@@ -60,7 +59,8 @@ public class Setup {
 
         // Listeners
         new SheepDyeListener(p);
-        new MobDropListener(p);
+        
+        // Infusion listeners
         new InfusionAxeListener(p);
         new InfusionBowListener(p);
         new InfusionHoeListener(p);
