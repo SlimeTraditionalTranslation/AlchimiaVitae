@@ -12,6 +12,8 @@
 | 點下方圖片下載 | 點下方圖片下載 |
 | [![Build Status](https://xMikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master/badge.svg)](https://xMikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master) | [![Build Status](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/badge.svg)](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master) |
 
+**需求 Java 17, Paper, 和 Minecraft 1.18.2!**
+
 ### 特徵:
 - 暗和光魔法植物
   - 用於釀造藥水
