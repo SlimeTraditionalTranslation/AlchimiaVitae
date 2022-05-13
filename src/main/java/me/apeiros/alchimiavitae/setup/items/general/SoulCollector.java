@@ -34,7 +34,7 @@ public class SoulCollector extends SlimefunItem {
             if (e.getEntity() instanceof Player) {
                 // The Soul Collector cannot be used on players
                 e.setCancelled(true);
-                p.sendMessage(Utils.parse("<red>你不能用靈魂收集者傷害玩家!"));
+                p.sendMessage(Utils.legacySerialize("<red>你不能用靈魂收集者傷害玩家!"));
                 p.playSound(p.getLocation(), Sound.BLOCK_GLASS_BREAK, 1, 1);
             }
         };
@@ -59,7 +59,7 @@ public class SoulCollector extends SlimefunItem {
                 }
 
                 for (int i = 0; i < soulAmount; i++) {
-                    e.getDrops().add(Items.CONDENSED_SOUL);
+                    e.getDrops().add(Items.CONDENSED_SOUL.clone());
                 }
 
                 e.setDroppedExp(e.getDroppedExp() * expMultiplier);

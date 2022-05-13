@@ -1,10 +1,10 @@
 package me.apeiros.alchimiavitae;
 
 import io.github.mooy1.infinitylib.core.AbstractAddon;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+//import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
 import me.apeiros.alchimiavitae.setup.Setup;
 
-public class AlchimiaVitae extends AbstractAddon implements SlimefunAddon {
+public class AlchimiaVitae extends AbstractAddon {
 
     private static AlchimiaVitae i;
 
@@ -19,6 +19,9 @@ public class AlchimiaVitae extends AbstractAddon implements SlimefunAddon {
 
         // Setup items and listeners
         Setup.setup(this);
+
+        // bStats
+        //Metrics metrics = new Metrics(this, 15139);
     }
 
     @Override

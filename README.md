@@ -12,7 +12,7 @@
 | 點下方圖片下載 | 點下方圖片下載 |
 | [![Build Status](https://xMikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master/badge.svg)](https://xMikux.github.io/builds/SlimeTraditionalTranslation/AlchimiaVitae/master) | [![Build Status](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master/badge.svg)](https://thebusybiscuit.github.io/builds/Apeiros-46B/AlchimiaVitae/master) |
 
-**需求 Java 17, Paper, 和 Minecraft 1.18.2!**
+**需要 Slimefun, 至少 Minecraft 1.17 和最低 Java 16!**
 
 ### 特徵:
 - 暗和光魔法植物
@@ -53,7 +53,7 @@
 - 強力性
   - 適用物品: 弓, 弩
   - 效果:
-    - 箭矢以兩倍遠與更快
+    - 箭矢以兩倍遠與造成更多傷害
 - 治療性
   - 適用物品: 弓, 弩
   - 效果:
@@ -61,8 +61,7 @@
 - 揮發性
   - 適用物品: 弓, 弩
   - 效果:
-    - 1/7 機率射出一個不會造成方塊破壞與產生火焰的火球
-    - 如果沒有發射火球, 則會發射一個小火球, 它不會造成方塊破壞與產生火焰
+    - 發射火球而不是箭矢 (不會造成方塊破壞, 也不會引起火源)
 - 自動化重種
   - 適用物品: 鋤頭
   - 效果:

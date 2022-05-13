@@ -10,11 +10,10 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.Items;
-import me.apeiros.alchimiavitae.utils.Utils;
 import me.apeiros.alchimiavitae.utils.InfusionMap;
+import me.apeiros.alchimiavitae.utils.Utils;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -140,8 +139,8 @@ public class AltarOfInfusion extends CraftingBlock {
             }, PHANTOM_CRITS);
 
             item = new SlimefunItemStack("AV_PHANTOM_CRITS_INFUSION", Material.PHANTOM_MEMBRANE, "&b幻影性爆擊",
-                    "&a1/4 機率造成 (你的攻擊傷害為 1.15",
-                    "&a乘以 5/8) 爆擊時額外的傷害並繞過護甲防禦");
+                    "&a有小機率在爆擊時",
+                    "&a造成額外傷害, 並忽視護甲");
 
             new SlimefunItem(Utils.ItemGroups.INFUSIONS, item, Utils.RecipeTypes.INFUSION_ALTAR_TYPE, new ItemStack[] {
                     new ItemStack(Material.PHANTOM_MEMBRANE), SlimefunItems.MAGICAL_GLASS, new ItemStack(Material.PHANTOM_MEMBRANE),
@@ -177,7 +176,7 @@ public class AltarOfInfusion extends CraftingBlock {
 
             item = new SlimefunItemStack("AV_FORCEFUL_INFUSION", Material.PISTON, "&2強力性",
                     "&a這種注入使用機械", "&a裝置與電磁來加速",
-                    "&a彈射物以極快的速度", "&a箭矢將會以兩倍遠與更快");
+                    "&a彈射物以極快的速度", "&a箭矢將會以兩倍遠與造成更多傷害");
 
             new SlimefunItem(Utils.ItemGroups.INFUSIONS, item, Utils.RecipeTypes.INFUSION_ALTAR_TYPE, new ItemStack[] {
                     SlimefunItems.ELECTRO_MAGNET, new ItemStack(Material.PISTON), SlimefunItems.STAFF_WIND,
@@ -195,8 +194,7 @@ public class AltarOfInfusion extends CraftingBlock {
 
             item = new SlimefunItemStack("AV_VOLATILE_INFUSION", Material.FIRE_CHARGE, "&4&l揮發性",
                     "&c這種極其危險的注入物會造成", "&c純粹過熱的熔岩所製成的球體,",
-                    "&c向目標傳送至迷你地獄", "&41/7 機率發射一顆火球",
-                    "&46/7 機率發射小火球");
+                    "&c向目標發射一個迷你地獄火");
 
             new SlimefunItem(Utils.ItemGroups.INFUSIONS, item, Utils.RecipeTypes.INFUSION_ALTAR_TYPE, new ItemStack[] {
                     new ItemStack(Material.BLAZE_ROD), SlimefunItems.STAFF_FIRE, SlimefunItems.TALISMAN_FIRE,
@@ -338,7 +336,7 @@ public class AltarOfInfusion extends CraftingBlock {
 
         // Invalid Infusion
         if (infusion == null) {
-            p.sendMessage(Utils.parse("<red>無效的注入!"));
+            p.sendMessage(Utils.legacySerialize("<red>無效的注入!"));
             return;
         }
 
@@ -354,12 +352,12 @@ public class AltarOfInfusion extends CraftingBlock {
                 // Valid item
             } else {
                 // Invalid item
-                p.sendMessage(Utils.parse("<red>你無法對此工具進行注入!"));
+                p.sendMessage(Utils.legacySerialize("<red>你無法對此工具進行注入!"));
                 return;
             }
         } else {
             // Invalid item
-            p.sendMessage(Utils.parse("<red>你無法注入在方塊上!"));
+            p.sendMessage(Utils.legacySerialize("<red>你無法注入在方塊上!"));
             return;
         }
 
@@ -367,7 +365,7 @@ public class AltarOfInfusion extends CraftingBlock {
         ItemStack tool = inv.getItemInSlot(TOOL_SLOT);
         if (tool == null || tool.getType().equals(Material.AIR)) {
             // No tool
-            p.sendMessage(Utils.parse("<red>你不能注入空氣!"));
+            p.sendMessage(Utils.legacySerialize("<red>你不能注入空氣!"));
             return;
         }
 
@@ -388,7 +386,7 @@ public class AltarOfInfusion extends CraftingBlock {
                 container.has(REPLANT, PersistentDataType.BYTE) ||
                 container.has(KNOCKBACK, PersistentDataType.BYTE)) {
             // Tool is already infused
-            p.sendMessage(Utils.parse("<red>你已經對這件物品添加了注入物!"));
+            p.sendMessage(Utils.legacySerialize("<red>你已經對這件物品添加了注入物!"));
             return;
         }
 
@@ -398,54 +396,54 @@ public class AltarOfInfusion extends CraftingBlock {
             container.set(infusion, PersistentDataType.BYTE, (byte) 1);
 
             // Lore
-            List<Component> lore = meta.lore() != null ? meta.lore() : new ArrayList<>();
+            List<String> lore = meta.getLore() != null ? meta.getLore() : new ArrayList<>();
 
             // Add lines to lore
-            lore.add(Component.newline());
-            lore.add(Utils.parse("<gray>注入物:"));
+            lore.add("");
+            lore.add(Utils.legacySerialize("<gray>注入物:"));
 
             // Add infusion name to lore
             if (infusion.equals(DESTRUCTIVE_CRITS)) {
-                lore.add(Utils.parse("<dark_gray>› <red><bold>破壞性爆擊"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <red><bold>破壞性爆擊"));
             } else if (infusion.equals(PHANTOM_CRITS)) {
-                lore.add(Utils.parse("<dark_gray>› <aqua>幻影性爆擊"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <aqua>幻影性爆擊"));
             } else if (infusion.equals(TRUE_AIM)) {
-                lore.add(Utils.parse("<dark_gray>› <light_purple>真正的自動瞄準"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <light_purple>真正的自動瞄準"));
             } else if (infusion.equals(FORCEFUL)) {
-                lore.add(Utils.parse("<dark_gray>› <dark_green>強力性"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <dark_green>強力性"));
             } else if (infusion.equals(VOLATILE)) {
-                lore.add(Utils.parse("<dark_gray>› <dark_red><bold>揮發性"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <dark_red><bold>揮發性"));
             } else if (infusion.equals(HEALING)) {
-                lore.add(Utils.parse("<dark_gray>› <red>治療性"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <red>治療性"));
             } else if (infusion.equals(REPLANT)) {
-                lore.add(Utils.parse("<dark_gray>› <green>自動化重種"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <green>自動化重種"));
             } else if (infusion.equals(KNOCKBACK)) {
-                lore.add(Utils.parse("<dark_gray>› <green>擊退性"));
+                lore.add(Utils.legacySerialize("<dark_gray>› <green>擊退性"));
             }
 
             // Set lore and meta
-            meta.lore(lore);
+            meta.setLore(lore);
             tool.setItemMeta(meta);
         } else if (canBeInfused(tool, infusion) && infusion.equals(TOTEM_STORAGE)) {
             // Tool can be infused and the Infusion is the totem battery
             container.set(infusion, PersistentDataType.INTEGER, 0);
 
             // Lore
-            List<Component> lore = meta.lore() != null ? meta.lore() : new ArrayList<>();
+            List<String> lore = meta.getLore() != null ? meta.getLore() : new ArrayList<>();
 
             // Add lines to lore
-            lore.add(Component.newline());
-            lore.add(Utils.parse("<gray>注入物:"));
+            lore.add("");
+            lore.add(Utils.legacySerialize("<gray>注入物:"));
 
             // Add infusion name to lore
-            lore.add(Utils.parse("<dark_gray>› <gold><bold>圖騰電池"));
+            lore.add(Utils.legacySerialize("<dark_gray>› <gold><bold>圖騰電池"));
 
             // Set lore and meta
-            meta.lore(lore);
+            meta.setLore(lore);
             tool.setItemMeta(meta);
         } else {
             // Tool cannot be infused
-            p.sendMessage(Utils.parse("<red>你不能將此注入物添加於該物品!"));
+            p.sendMessage(Utils.legacySerialize("<red>你不能將此注入物添加於該物品!"));
             return;
         }
 
@@ -487,7 +485,7 @@ public class AltarOfInfusion extends CraftingBlock {
                     b.getWorld().spawnParticle(Particle.PORTAL, b.getLocation().add(0.5, 0.5, 0.5), 300, 2, 2, 2);
 
                     // Send message
-                    p.sendMessage(Utils.parse("<gradient:#50fa75:#3dd2ff>你的物品已被注入!</gradient>"));
+                    p.sendMessage(Utils.legacySerialize("<gradient:#50fa75:#3dd2ff>你的物品已被注入!</gradient>"));
                 }, 30);
             }, 30);
         }, 30);
