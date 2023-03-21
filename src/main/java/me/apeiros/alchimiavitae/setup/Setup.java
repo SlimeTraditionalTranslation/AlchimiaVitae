@@ -1,135 +1,237 @@
 package me.apeiros.alchimiavitae.setup;
 
+import org.bukkit.Material;
+import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
+
+import io.github.mooy1.infinitylib.core.AbstractAddon;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+
+import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
-import me.apeiros.alchimiavitae.listeners.SheepDyeListener;
-import me.apeiros.alchimiavitae.listeners.infusion.InfusionAxeListener;
-import me.apeiros.alchimiavitae.listeners.infusion.InfusionBowListener;
-import me.apeiros.alchimiavitae.listeners.infusion.InfusionFishingRodListener;
-import me.apeiros.alchimiavitae.listeners.infusion.InfusionHoeListener;
-import me.apeiros.alchimiavitae.listeners.infusion.InfusionTotemListener;
+import me.apeiros.alchimiavitae.listeners.DyeListener;
+import me.apeiros.alchimiavitae.listeners.infusion.FishingRodListener;
+import me.apeiros.alchimiavitae.listeners.infusion.HoeListener;
+import me.apeiros.alchimiavitae.listeners.infusion.MeleeWeaponListener;
+import me.apeiros.alchimiavitae.listeners.infusion.RangedWeaponListener;
+import me.apeiros.alchimiavitae.listeners.infusion.TotemListener;
 import me.apeiros.alchimiavitae.setup.items.crafters.AltarOfInfusion;
+import me.apeiros.alchimiavitae.setup.items.crafters.CosmicCauldron;
 import me.apeiros.alchimiavitae.setup.items.crafters.DivineAltar;
-import me.apeiros.alchimiavitae.setup.items.crafters.OrnateCauldron;
 import me.apeiros.alchimiavitae.setup.items.electric.EXPCrystallizer;
 import me.apeiros.alchimiavitae.setup.items.electric.PlantInfusionChamber;
-import me.apeiros.alchimiavitae.setup.items.general.CondensedSoul;
-import me.apeiros.alchimiavitae.setup.items.general.Darksteel;
-import me.apeiros.alchimiavitae.setup.items.general.EXPCrystal;
-import me.apeiros.alchimiavitae.setup.items.general.Illumium;
 import me.apeiros.alchimiavitae.setup.items.general.MoltenMysteryMetal;
-import me.apeiros.alchimiavitae.setup.items.general.MysteryMetal;
 import me.apeiros.alchimiavitae.setup.items.general.SoulCollector;
-import me.apeiros.alchimiavitae.setup.items.plants.EvilEssence;
-import me.apeiros.alchimiavitae.setup.items.plants.EvilMagicPlant;
-import me.apeiros.alchimiavitae.setup.items.plants.GoodEssence;
-import me.apeiros.alchimiavitae.setup.items.plants.GoodMagicPlant;
 import me.apeiros.alchimiavitae.setup.items.potions.BenevolentBrew;
 import me.apeiros.alchimiavitae.setup.items.potions.MalevolentConcoction;
 import me.apeiros.alchimiavitae.setup.items.potions.PotionOfOsmosis;
-import me.apeiros.alchimiavitae.utils.Utils;
-import org.bukkit.NamespacedKey;
 
+/**
+ * Sets up items, {@link Listener}s, and {@link Research}es
+ */
 public class Setup {
 
-    public static void setup(AlchimiaVitae p) {
-        // Category
-        Utils.ItemGroups.MAIN.register(p);
+    // {{{ Main
+    public static void setup(AlchimiaVitae instance) {
+        // Register main item group
+        AlchimiaUtils.ItemGroups.MAIN.register(instance);
 
         // Items
-        new SoulCollector(Utils.ItemGroups.GENERAL).register(p);
-        new CondensedSoul(Utils.ItemGroups.GENERAL).register(p);
-        new PlantInfusionChamber(Utils.ItemGroups.GENERAL).register(p);
-        new GoodMagicPlant(Utils.ItemGroups.GENERAL).register(p);
-        new EvilMagicPlant(Utils.ItemGroups.GENERAL).register(p);
-        new GoodEssence(Utils.ItemGroups.GENERAL).register(p);
-        new EvilEssence(Utils.ItemGroups.GENERAL).register(p);
-        new EXPCrystallizer(Utils.ItemGroups.GENERAL).register(p);
-        new EXPCrystal(Utils.ItemGroups.GENERAL).register(p);
-        new Illumium(Utils.ItemGroups.GENERAL).register(p);
-        new Darksteel(Utils.ItemGroups.GENERAL).register(p);
-        new DivineAltar(Utils.ItemGroups.GENERAL).register(p);
-        new MoltenMysteryMetal(Utils.ItemGroups.GENERAL).register(p);
-        new MysteryMetal(Utils.ItemGroups.GENERAL).register(p);
-        new OrnateCauldron(Utils.ItemGroups.GENERAL).register(p);
-        new PotionOfOsmosis(Utils.ItemGroups.GENERAL).register(p);
-        new BenevolentBrew(Utils.ItemGroups.GENERAL).register(p);
-        new MalevolentConcoction(Utils.ItemGroups.GENERAL).register(p);
-        new AltarOfInfusion(Utils.ItemGroups.INFUSIONS).register(p);
+        setupItems(instance);
 
         // Listeners
-        new SheepDyeListener(p);
-        
-        // Infusion listeners
-        new InfusionAxeListener(p);
-        new InfusionBowListener(p);
-        new InfusionHoeListener(p);
-        new InfusionTotemListener(p);
-        new InfusionFishingRodListener(p);
+        setupListeners(instance);
 
         // Researches
-        setupResearches(p);
+        setupResearches(instance);
     }
+    // }}}
 
-    public static void setupResearches(AlchimiaVitae p) {
-        new Research(new NamespacedKey(p, "soul"), 131072,
-                "破壞生死輪迴", 25)
-                .addItems(Items.CONDENSED_SOUL, Items.SOUL_COLLECTOR)
+    // {{{ Items
+    private static void setupItems(AlchimiaVitae instance) {
+        // Items
+        // {{{ Soul Collector & Condensed Soul
+        new SoulCollector(AlchimiaUtils.ItemGroups.GENERAL).register(instance);
+
+        CustomItemStack condensedSoulRecipeItem = new CustomItemStack(
+                Material.DROWNED_SPAWN_EGG,
+                "&bAny Mob",
+                "&7Wither Skeletons and",
+                "&7Withers have a chance",
+                "&7to drop more souls...");
+
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.CONDENSED_SOUL, AlchimiaUtils.RecipeTypes.SOUL_COLLECTOR, new ItemStack[] {
+                null, null, null,
+                null, condensedSoulRecipeItem, null,
+                null, null, null
+        }).register(instance);
+        // }}}
+
+        // {{{ Plants
+        // Machine
+        new PlantInfusionChamber(AlchimiaUtils.ItemGroups.GENERAL).register(instance);
+
+        // Plants
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.LIGHT_MAGIC_PLANT, AlchimiaUtils.RecipeTypes.PLANT_INFUSION_CHAMBER, new ItemStack[] {
+                new ItemStack(Material.OAK_SAPLING), SlimefunItems.MAGIC_LUMP_3, null,
+                null, null, null,
+                null, null, null
+        }).register(instance);
+
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.DARK_MAGIC_PLANT, AlchimiaUtils.RecipeTypes.PLANT_INFUSION_CHAMBER, new ItemStack[] {
+                new ItemStack(Material.OAK_SAPLING), AlchimiaItems.CONDENSED_SOUL, null,
+                null, null, null,
+                null, null, null
+        }).register(instance);
+
+        // Essence
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.LIGHT_ESSENCE, RecipeType.GRIND_STONE, new ItemStack[] {
+                AlchimiaItems.LIGHT_MAGIC_PLANT, null, null,
+                null, null, null,
+                null, null, null
+        }, new SlimefunItemStack(AlchimiaItems.LIGHT_ESSENCE, 4)).register(instance);
+
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.DARK_ESSENCE, RecipeType.GRIND_STONE, new ItemStack[] {
+                AlchimiaItems.DARK_MAGIC_PLANT, null, null,
+                null, null, null,
+                null, null, null
+        }, new SlimefunItemStack(AlchimiaItems.DARK_ESSENCE, 4)).register(instance);
+        // }}}
+
+        // {{{ EXP Crystallizer
+        new EXPCrystallizer(AlchimiaUtils.ItemGroups.GENERAL).register(instance);
+
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.EXP_CRYSTAL, AlchimiaUtils.RecipeTypes.EXP_CRYSTALLIZER, new ItemStack[] {
+                new SlimefunItemStack(SlimefunItems.FILLED_FLASK_OF_KNOWLEDGE, 4), null, null,
+                null, null, null,
+                null, null, null
+        }).register(instance);
+        // }}}
+
+        // {{{ Ingots
+        // Illumium
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.ILLUMIUM, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                SlimefunItems.MAGIC_LUMP_1, AlchimiaItems.EXP_CRYSTAL, SlimefunItems.MAGIC_LUMP_1,
+                AlchimiaItems.LIGHT_ESSENCE, SlimefunItems.STEEL_INGOT, AlchimiaItems.LIGHT_ESSENCE,
+                SlimefunItems.MAGIC_LUMP_1, AlchimiaItems.EXP_CRYSTAL, SlimefunItems.MAGIC_LUMP_1
+        }, new SlimefunItemStack(AlchimiaItems.ILLUMIUM, 4)).register(instance);
+
+        // Darksteel
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.DARKSTEEL, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                SlimefunItems.ENDER_LUMP_1, AlchimiaItems.EXP_CRYSTAL, SlimefunItems.ENDER_LUMP_1,
+                AlchimiaItems.DARK_ESSENCE, SlimefunItems.STEEL_INGOT, AlchimiaItems.DARK_ESSENCE,
+                SlimefunItems.ENDER_LUMP_1, AlchimiaItems.EXP_CRYSTAL, SlimefunItems.ENDER_LUMP_1
+        }, new SlimefunItemStack(AlchimiaItems.DARKSTEEL, 4)).register(instance);
+        // }}}
+
+        // {{{ Divine Altar
+        DivineAltar divineAltar = new DivineAltar(AlchimiaUtils.ItemGroups.GENERAL);
+        divineAltar.register(instance);
+
+        new MoltenMysteryMetal(AlchimiaUtils.ItemGroups.GENERAL, divineAltar).register(instance);
+
+        new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.MYSTERY_METAL, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[] {
+                AlchimiaItems.MOLTEN_MYSTERY_METAL, null, null,
+                null, null, null,
+                null, null, null
+        }, new SlimefunItemStack(AlchimiaItems.MYSTERY_METAL, 16)).register(instance);
+        // }}}
+
+        // {{{ Cosmic Cauldron
+        CosmicCauldron cauldron = new CosmicCauldron(AlchimiaUtils.ItemGroups.GENERAL, divineAltar);
+        cauldron.register(instance);
+
+        new PotionOfOsmosis(AlchimiaUtils.ItemGroups.GENERAL, cauldron).register(instance);
+        new BenevolentBrew(AlchimiaUtils.ItemGroups.GENERAL, cauldron).register(instance);
+        new MalevolentConcoction(AlchimiaUtils.ItemGroups.GENERAL, cauldron).register(instance);
+        // }}}
+
+        // {{{ Altar of Infusion
+        new AltarOfInfusion(AlchimiaUtils.ItemGroups.INFUSIONS, divineAltar).register(instance);
+        // }}}
+    }
+    // }}}
+
+    // {{{ Listeners
+    private static void setupListeners(AlchimiaVitae instance) {
+        new DyeListener(instance);
+
+        // Infusion listeners
+        new MeleeWeaponListener(instance);
+        new RangedWeaponListener(instance);
+        new HoeListener(instance);
+        new TotemListener(instance);
+        new FishingRodListener(instance);
+    }
+    // }}}
+
+    // {{{ Researches
+    private static void setupResearches(AlchimiaVitae instance) {
+        new Research(AbstractAddon.createKey("soul"), 131072,
+                "Manipulation of life force", 15)
+                .addItems(AlchimiaItems.CONDENSED_SOUL, AlchimiaItems.SOUL_COLLECTOR)
                 .register();
 
-        new Research(new NamespacedKey(p, "magic_plants"), 131073,
-                "兩極對立", 30)
-                .addItems(Items.PLANT_INFUSION_CHAMBER, Items.GOOD_MAGIC_PLANT, Items.EVIL_MAGIC_PLANT)
+        new Research(AbstractAddon.createKey("magic_plants"), 131073,
+                "Powerful plants", 20)
+                .addItems(AlchimiaItems.PLANT_INFUSION_CHAMBER, AlchimiaItems.LIGHT_MAGIC_PLANT, AlchimiaItems.DARK_MAGIC_PLANT)
                 .register();
 
-        new Research(new NamespacedKey(p, "magic_essence"), 131074,
-                "磨它下來", 10)
-                .addItems(Items.GOOD_ESSENCE, Items.EVIL_ESSENCE)
+        new Research(AbstractAddon.createKey("magic_essence"), 131074,
+                "Powerful powder", 10)
+                .addItems(AlchimiaItems.LIGHT_ESSENCE, AlchimiaItems.DARK_ESSENCE)
                 .register();
 
-        new Research(new NamespacedKey(p, "exp_crystals"), 131075,
-                "結晶化經驗", 21)
-                .addItems(Items.EXP_CRYSTALLIZER, Items.EXP_CRYSTAL)
+        new Research(AbstractAddon.createKey("exp_crystals"), 131075,
+                "Pure crystalline energy", 12)
+                .addItems(AlchimiaItems.EXP_CRYSTALLIZER, AlchimiaItems.EXP_CRYSTAL)
                 .register();
 
-        new Research(new NamespacedKey(p, "magic_steel"), 131076,
-                "神秘金屬", 16)
-                .addItems(Items.DARKSTEEL, Items.ILLUMIUM)
+        new Research(AbstractAddon.createKey("magic_steel"), 131076,
+                "Mystical metals", 16)
+                .addItems(AlchimiaItems.DARKSTEEL, AlchimiaItems.ILLUMIUM)
                 .register();
 
-        new Research(new NamespacedKey(p, "divine_altar"), 131077,
-                "古代祭壇失散多年的兄弟", 45)
-                .addItems(Items.DIVINE_ALTAR)
+        new Research(AbstractAddon.createKey("divine_altar"), 131077,
+                "The Ancient Altar's lost cousin", 36)
+                .addItems(AlchimiaItems.DIVINE_ALTAR)
                 .register();
 
-        new Research(new NamespacedKey(p, "metal_amalgamation"), 131078,
-                "一種金屬物質的混和物", 19)
-                .addItems(Items.MOLTEN_MYSTERY_METAL, Items.MYSTERY_METAL)
+        new Research(AbstractAddon.createKey("metal_amalgamation"), 131078,
+                "Amalgam", 19)
+                .addItems(AlchimiaItems.MOLTEN_MYSTERY_METAL, AlchimiaItems.MYSTERY_METAL)
                 .register();
 
-        new Research(new NamespacedKey(p, "ornate_cauldron"), 131079,
-                "用於釀造高級藥水的裝置", 35)
-                .addItems(Items.ORNATE_CAULDRON)
+        new Research(AbstractAddon.createKey("cosmic_cauldron"), 131079,
+                "Advanced brewery", 36)
+                .addItems(AlchimiaItems.COSMIC_CAULDRON)
                 .register();
 
-        new Research(new NamespacedKey(p, "potion_of_osmosis"), 131080,
-                "滲透與吸收", 30)
-                .addItems(Items.POTION_OF_OSMOSIS)
+        new Research(AbstractAddon.createKey("potion_of_osmosis"), 131080,
+                "Absorbing and reflecting", 30)
+                .addItems(AlchimiaItems.POTION_OF_OSMOSIS)
                 .register();
 
-        new Research(new NamespacedKey(p, "benevolent_brew"), 131081,
-                "蓋亞本人的祝福", 35)
-                .addItems(Items.BENEVOLENT_BREW)
+        new Research(AbstractAddon.createKey("benevolent_brew"), 131081,
+                "A blessing from Gaia herself", 20)
+                .addItems(AlchimiaItems.BENEVOLENT_BREW)
                 .register();
 
-        new Research(new NamespacedKey(p, "malevolent_concoction"), 131082,
-                "一種帶有輕微腐壞色彩的物質", 35)
-                .addItems(Items.MALEVOLENT_CONCOCTION)
+        new Research(AbstractAddon.createKey("malevolent_concoction"), 131082,
+                "A demonic liquid", 20)
+                .addItems(AlchimiaItems.MALEVOLENT_CONCOCTION)
                 .register();
 
-        new Research(new NamespacedKey(p, "altar_of_infusion"), 131083,
-                "為你的物品注入活力的終極祭壇", 30)
-                .addItems(Items.ALTAR_OF_INFUSION)
+        new Research(AbstractAddon.createKey("altar_of_infusion"), 131083,
+                "Infusion", 36)
+                .addItems(AlchimiaItems.ALTAR_OF_INFUSION)
                 .register();
     }
+    // }}}
+
 }
