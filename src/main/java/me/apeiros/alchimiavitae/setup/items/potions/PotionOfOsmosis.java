@@ -49,7 +49,7 @@ public class PotionOfOsmosis extends AbstractListenerPotion {
 
         // Make sure the player has effects
         if (p.getActivePotionEffects().isEmpty()) {
-            p.sendMessage(AlchimiaUtils.format("<red>There are no effects to absorb!"));
+            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.potion.message.empty}"));
             return;
         }
 
@@ -64,11 +64,11 @@ public class PotionOfOsmosis extends AbstractListenerPotion {
         // Make a new potion
         ItemStack newPotion = AlchimiaUtils.makePotion(
                 "AV_CORUSCATING_POTION",
-                AlchimiaUtils.format("<gradient:#6fe3e1:#53e6a6>Coruscating Potion</gradient>"),
+                AlchimiaUtils.format("<gradient:#6fe3e1:#53e6a6>${alchimiavitae.av_coruscating_potion.name}</gradient>"),
                 Color.FUCHSIA, effects, false,
-                "&aCreated from a",
-                AlchimiaUtils.format("<gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"),
-                "", AlchimiaUtils.itemType("Potion"));
+                "${alchimiavitae.av_coruscating_potion.lore.01}",
+                AlchimiaUtils.format("<gradient:#6274e7:#8752a3>${alchimiavitae.av_coruscating_potion.lore.02}</gradient>"),
+                "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.potion}"));
 
         // {{{ Finish
         new BukkitRunnable() {
