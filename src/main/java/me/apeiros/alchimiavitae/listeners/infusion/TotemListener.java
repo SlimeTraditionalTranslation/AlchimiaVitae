@@ -77,12 +77,12 @@ public class TotemListener implements Listener {
         if (e.getItem() == null || !e.getItem().isSimilar(new ItemStack(Material.TOTEM_OF_UNDYING))) {
             // If the item isn't a totem, inform the player of the current number of totems
             p.sendMessage(AlchimiaUtils.format(
-                    "<green>There "
+                    "${alchimiavitae.totem_battery.info.message.01}"
                     + (totems == 1
-                          ? "is 1 totem"
-                          : "are " + totems + " totems"
+                          ? "${alchimiavitae.totem_battery.info.message.02}"
+                          : "${alchimiavitae.totem_battery.info.message.03}" + totems + "${alchimiavitae.totem_battery.info.message.04}"
                       )
-                    + " stored in the Battery of Totems."
+                    + "${alchimiavitae.totem_battery.info.message.05}"
                 )
             );
 
@@ -92,7 +92,7 @@ public class TotemListener implements Listener {
 
         // Check if there are already 8 totems
         if (totems > 7) {
-            p.sendMessage(AlchimiaUtils.format("<red>There is no more space for this totem!"));
+            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.totem_battery.full}"));
             p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1F, 1F);
             return;
         }
@@ -112,14 +112,14 @@ public class TotemListener implements Listener {
         p.getInventory().getChestplate().setItemMeta(meta);
 
         // Inform the player of the new number of totems
-        p.sendMessage(AlchimiaUtils.format("<green>Your totem has been added to the Battery of Totems."));
+        p.sendMessage(AlchimiaUtils.format("${alchimiavitae.totem_battery.added.message.01}"));
         p.sendMessage(AlchimiaUtils.format(
-                "<green>There "
+                "${alchimiavitae.totem_battery.added.message.02.01}"
                 + (totems == 1
-                      ? "is now 1 totem"
-                      : "are now " + totems + " totems"
+                      ? "${alchimiavitae.totem_battery.added.message.02.02}"
+                      : "${alchimiavitae.totem_battery.added.message.02.03}" + totems + "${alchimiavitae.totem_battery.added.message.02.04}"
                   )
-                + " stored."
+                + "${alchimiavitae.totem_battery.added.message.02.05}"
             )
         );
 
@@ -203,12 +203,12 @@ public class TotemListener implements Listener {
         };
 
         p.sendMessage(AlchimiaUtils.format(
-                color + "There "
+                color + "${alchimiavitae.totem_battery.left.message.01}"
                 + (totems == 1
-                      ? "is 1 totem"
-                      : "are " + (totems == 0 ? "no" : totems) + " totems"
+                      ? "${alchimiavitae.totem_battery.left.message.02}"
+                      : "${alchimiavitae.totem_battery.left.message.03}" + (totems == 0 ? "${alchimiavitae.totem_battery.left.message.04}" : totems) + "${alchimiavitae.totem_battery.left.message.05}"
                   )
-                + " left in the Battery of Totems."
+                + "${alchimiavitae.totem_battery.left.message.06}"
             )
         );
 

@@ -49,5 +49,5 @@ if __name__ == '__main__':
     json_file = "src/main/translations/translations_zh_TW.json"
     directory = "src/"
     replacements = load_json(json_file)
-    simulate = True
+    simulate = False
     replace_in_directory(directory, replacements, simulate=simulate)

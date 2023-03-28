@@ -66,8 +66,7 @@ public class PotionOfOsmosis extends AbstractListenerPotion {
                 "AV_CORUSCATING_POTION",
                 AlchimiaUtils.format("<gradient:#6fe3e1:#53e6a6>${alchimiavitae.av_coruscating_potion.name}</gradient>"),
                 Color.FUCHSIA, effects, false,
-                "${alchimiavitae.av_coruscating_potion.lore.01}",
-                AlchimiaUtils.format("<gradient:#6274e7:#8752a3>${alchimiavitae.av_coruscating_potion.lore.02}</gradient>"),
+                AlchimiaUtils.format("${alchimiavitae.av_coruscating_potion.lore.01}"),
                 "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.potion}"));
 
         // {{{ Finish

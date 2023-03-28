@@ -79,11 +79,11 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         boolean knockbackEnabled        = cfg.getBoolean("options.infusions.infusion-knockback");
 
         // Create placeholder items
-        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, "&a&oA gold, iron, diamond,", "&a&oor netherite axe or sword");
-        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, "&a&oA bow or crossbow");
-        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, "&a&oA gold, iron, diamond,", "&a&oor netherite hoe");
-        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "&a&oA gold, iron, diamond, or", "&a&onetherite chestplate");
-        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, "&a&oA fishing rod");
+        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, "${alchimiavitae.infuse.valid_melee.01}", "${alchimiavitae.infuse.valid_melee.02}");
+        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, "${alchimiavitae.infuse.valid_ranged.01}");
+        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, "${alchimiavitae.infuse.valid_hoe.01}", "${alchimiavitae.infuse.valid_hoe.02}");
+        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "${alchimiavitae.infuse.valid_chestplate.01}", "${alchimiavitae.infuse.valid_chestplate.02}");
+        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, "${alchimiavitae.infuse.valid_fishingrod.01}");
 
         // Get ItemGroup and RecipeType
         ItemGroup ig = AlchimiaUtils.ItemGroups.INFUSIONS;
