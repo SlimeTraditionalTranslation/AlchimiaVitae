@@ -28,27 +28,27 @@ public class AlchimiaItems {
 
     // {{{ Menu items (for custom crafters)
     public static final ItemStack IN_BG = new CustomItemStack(Material.ORANGE_STAINED_GLASS_PANE,
-            AlchimiaUtils.format("<gradient:#ff68fc:#ff9a5c>Input</gradient>"));
+            AlchimiaUtils.format("<gradient:#ff68fc:#ff9a5c>${alchimiavitae.menuitem.input}</gradient>"));
 
     public static final ItemStack CRAFT_BTN = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,
-            AlchimiaUtils.format("<gradient:#39f792:#5c95ff>Craft</gradient>"), "&aClick to craft");
+            AlchimiaUtils.format("<gradient:#39f792:#5c95ff>${alchimiavitae.menuitem.craft}</gradient>"), "${alchimiavitae.menuitem.craft.lore}");
 
     public static final ItemStack CRAFT_BG = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE,
-            AlchimiaUtils.format("<gradient:#39f792:#5c95ff>Craft</gradient>"));
+            AlchimiaUtils.format("<gradient:#39f792:#5c95ff>${alchimiavitae.menuitem.craft}</gradient>"));
 
     public static final ItemStack OUT_BG = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE,
-            AlchimiaUtils.format("<gradient:#5cb8ff:#39f7e1>Output</gradient>"));
+            AlchimiaUtils.format("<gradient:#5cb8ff:#39f7e1>${alchimiavitae.menuitem.output}</gradient>"));
     // }}}
 
     // {{{ Tools
     public static final SlimefunItemStack SOUL_COLLECTOR = new SlimefunItemStack("AV_SOUL_COLLECTOR",
-            Material.DIAMOND_SWORD, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>Soul Collector</gradient>"),
-            "&bExtracts souls", "",
-            "&7Killed mobs will drop souls",
-            "&73x EXP drops from all mobs",
-            "&7Wither-related mobs will",
-            "&7drop additional souls",
-            "", AlchimiaUtils.itemType("Tool"));
+            Material.DIAMOND_SWORD, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>${alchimiavitae.soul_collector.name}</gradient>"),
+            "${alchimiavitae.soul_collector.lore.01}", "",
+            "${alchimiavitae.soul_collector.lore.02}",
+            "${alchimiavitae.soul_collector.lore.03}",
+            "${alchimiavitae.soul_collector.lore.04}",
+            "${alchimiavitae.soul_collector.lore.05}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.tool}"));
 
     static {
         ItemMeta meta = SOUL_COLLECTOR.getItemMeta();
@@ -61,33 +61,33 @@ public class AlchimiaItems {
 
     // {{{ Machines
     public static final SlimefunItemStack PLANT_INFUSION_CHAMBER = new SlimefunItemStack("AV_PLANT_INFUSION_CHAMBER",
-            Material.LIME_STAINED_GLASS, AlchimiaUtils.format("<gradient:#549c64:#1de078>Plant Infusion Chamber</gradient>"),
-            "&bInfuses plants with dark",
-            "&bor light energy using",
-            "&bMagical Lumps and Souls", "",
+            Material.LIME_STAINED_GLASS, AlchimiaUtils.format("<gradient:#549c64:#1de078>${alchimiavitae.av_plant_infusion_chamber.name}</gradient>"),
+            "${alchimiavitae.av_plant_infusion_chamber.lore.01}",
+            "${alchimiavitae.av_plant_infusion_chamber.lore.02}",
+            "${alchimiavitae.av_plant_infusion_chamber.lore.03}", "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1),
             LoreBuilder.powerPerSecond(64),
-            "", AlchimiaUtils.itemType("Machine"));
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.machine}"));
 
     public static final SlimefunItemStack EXP_CRYSTALLIZER = new SlimefunItemStack("AV_EXP_CRYSTALLIZER",
             Material.LIME_STAINED_GLASS,
-            AlchimiaUtils.format("<gradient:#50fa75:#3dd2ff>Experience Crystallizer</gradient>"),
-            "&aForms experience into a crystalline,",
-            "&adurable, and stable form", "",
+            AlchimiaUtils.format("<gradient:#50fa75:#3dd2ff>${alchimiavitae.av_exp_crystallizer.name}</gradient>"),
+            "${alchimiavitae.av_exp_crystallizer.lore.01}",
+            "${alchimiavitae.av_exp_crystallizer.lore.02}", "",
             LoreBuilder.machine(MachineTier.END_GAME, MachineType.MACHINE),
             LoreBuilder.speed(1),
             LoreBuilder.powerPerSecond(32),
-            "", AlchimiaUtils.itemType("Machine"));
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.machine}"));
     // }}}
 
     // {{{ Resources
     public static final SlimefunItemStack CONDENSED_SOUL = new SlimefunItemStack("AV_CONDENSED_SOUL",
-            Material.LIGHT_BLUE_DYE, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>Condensed Soul</gradient>"),
-            "&bA soul, condensed into an orb",
-            "&9&oPerhaps there is a way",
-            "&9&oto manipulate its power...",
-            "", AlchimiaUtils.itemType("Raw Magic Resource"));
+            Material.LIGHT_BLUE_DYE, AlchimiaUtils.format("<gradient:#6baefa:#7145b0>${alchimiavitae.av_condensed_soul.name}</gradient>"),
+            "${alchimiavitae.av_condensed_soul.lore.01}",
+            "${alchimiavitae.av_condensed_soul.lore.02}",
+            "${alchimiavitae.av_condensed_soul.lore.03}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.raw_magic_resource}"));
 
     static {
         ItemMeta meta = CONDENSED_SOUL.getItemMeta();
@@ -99,9 +99,9 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack LIGHT_MAGIC_PLANT = new SlimefunItemStack("AV_GOOD_MAGIC_PLANT",
             Material.OAK_SAPLING,
-            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>Plant of Light Magic</gradient>"),
-            "&aRadiates an empyreal glow",
-            "", AlchimiaUtils.itemType("Base Magic Resource"));
+            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>${alchimiavitae.av_good_magic_plant.name}</gradient>"),
+            "${alchimiavitae.av_good_magic_plant.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.base_magic_resource}"));
 
     static {
         ItemMeta meta = LIGHT_MAGIC_PLANT.getItemMeta();
@@ -113,10 +113,10 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack DARK_MAGIC_PLANT = new SlimefunItemStack("AV_EVIL_MAGIC_PLANT",
             Material.OAK_SAPLING,
-            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>Plant of Dark Magic</gradient>"),
-            "&cIt's taking in a bit too much",
-            "&clight to be photosynthesizing",
-            "", AlchimiaUtils.itemType("Base Magic Resource"));
+            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>${alchimiavitae.av_evil_magic_plant.name}</gradient>"),
+            "${alchimiavitae.av_evil_magic_plant.lore.01}",
+            "${alchimiavitae.av_evil_magic_plant.lore.02}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.base_magic_resource}"));
 
     static {
         ItemMeta meta = DARK_MAGIC_PLANT.getItemMeta();
@@ -128,9 +128,9 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack EXP_CRYSTAL = new SlimefunItemStack("AV_EXP_CRYSTAL",
             Material.EMERALD,
-            AlchimiaUtils.format("<gradient:#50fa75:#3dd2ff>Experience Crystal</gradient>"),
-            "&aCrystallized.",
-            "", AlchimiaUtils.itemType("Base Magic Resource"));
+            AlchimiaUtils.format("<gradient:#50fa75:#3dd2ff>${alchimiavitae.av_exp_crystal.name}</gradient>"),
+            "${alchimiavitae.av_exp_crystal.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.base_magic_resource}"));
 
     static {
         ItemMeta meta = EXP_CRYSTAL.getItemMeta();
@@ -142,22 +142,22 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack LIGHT_ESSENCE = new SlimefunItemStack("AV_GOOD_ESSENCE",
             Material.SUGAR,
-            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>Light Essence</gradient>"),
-            "&aPulsates with luminescence",
-            "", AlchimiaUtils.itemType("Processed Magic Resource"));
+            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>${alchimiavitae.av_good_essence.name}</gradient>"),
+            "${alchimiavitae.av_good_essence.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.processed_magic_resource}"));
 
     public static final SlimefunItemStack DARK_ESSENCE = new SlimefunItemStack("AV_EVIL_ESSENCE",
             Material.GUNPOWDER,
-            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>Dark Essence</gradient>"),
-            "&cAbsorbs light like a",
-            "&csponge absorbs water",
-            "", AlchimiaUtils.itemType("Processed Magic Resource"));
+            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>${alchimiavitae.av_evil_essence.name}</gradient>"),
+            "${alchimiavitae.av_evil_essence.lore.01}",
+            "${alchimiavitae.av_evil_essence.lore.02}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.processed_magic_resource}"));
 
     public static final SlimefunItemStack ILLUMIUM = new SlimefunItemStack("AV_ILLUMIUM",
             Material.IRON_INGOT,
-            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>Illumium Ingot</gradient>"),
-            "&aIt energetically effuses light in your hand",
-            "", AlchimiaUtils.itemType("Enriched Magic Resource"));
+            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>${alchimiavitae.av_illumium.name}</gradient>"),
+            "${alchimiavitae.av_illumium.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.enriched_magic_resource}"));
 
     static {
         ItemMeta meta = ILLUMIUM.getItemMeta();
@@ -169,9 +169,9 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack DARKSTEEL = new SlimefunItemStack("AV_DARKSTEEL",
             Material.NETHERITE_INGOT,
-            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>Darksteel Ingot</gradient>"),
-            "&cIt radiates... with darkness?",
-            "", AlchimiaUtils.itemType("Enriched Magic Resource"));
+            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>${alchimiavitae.av_darksteel.name}</gradient>"),
+            "${alchimiavitae.av_darksteel.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.enriched_magic_resource}"));
 
     static {
         ItemMeta meta = DARKSTEEL.getItemMeta();
@@ -185,40 +185,40 @@ public class AlchimiaItems {
     // {{{ Divine Altar (Transmutation)
     public static final SlimefunItemStack DIVINE_ALTAR = new SlimefunItemStack("AV_DIVINE_ALTAR",
             Material.ENCHANTING_TABLE,
-            AlchimiaUtils.format("<gradient:#ff5555:#ff6cfd>Divine Altar</gradient>"),
-            "&5A sacred apparatus for the",
-            "&5performance of ancient rituals",
-            "", AlchimiaUtils.itemType("Altar"));
+            AlchimiaUtils.format("<gradient:#ff5555:#ff6cfd>${alchimiavitae.av_divine_altar.name}</gradient>"),
+            "${alchimiavitae.av_divine_altar.lore.01}",
+            "${alchimiavitae.av_divine_altar.lore.02}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.altar}"));
 
     public static final SlimefunItemStack MOLTEN_MYSTERY_METAL = new SlimefunItemStack("AV_MOLTEN_MYSTERY_METAL",
             Material.LAVA_BUCKET,
-            AlchimiaUtils.format("<gradient:#ff6745:#ff5555>Molten Mystery Metal</gradient>"),
-            "&6A conglomerate of different metals",
-            "", AlchimiaUtils.itemType("Transmutation Resource"));
+            AlchimiaUtils.format("<gradient:#ff6745:#ff5555>${alchimiavitae.av_molten_mystery_metal.name}</gradient>"),
+            "${alchimiavitae.av_molten_mystery_metal.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.transmutation_resource}"));
 
     public static final SlimefunItemStack MYSTERY_METAL = new SlimefunItemStack("AV_MYSTERY_METAL",
             Material.IRON_INGOT,
-            AlchimiaUtils.format("<gradient:#ff6745:#ff5555>Mystery Metal Ingot</gradient>"),
-            "&6Contains many metals",
-            "", AlchimiaUtils.itemType("Transmutation Resource"));
+            AlchimiaUtils.format("<gradient:#ff6745:#ff5555>${alchimiavitae.av_mystery_metal.name}</gradient>"),
+            "${alchimiavitae.av_mystery_metal.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.transmutation_resource}"));
     // }}}
 
     // {{{ Cosmic Cauldron (Potions)
     public static final SlimefunItemStack COSMIC_CAULDRON = new SlimefunItemStack("AV_ORNATE_CAULDRON",
             Material.CAULDRON,
-            AlchimiaUtils.format("<gradient:#57ebbe:#f6fa2a>Cosmic Cauldron</gradient>"),
-            "&2An altar for brewing advanced potions",
-            "", AlchimiaUtils.itemType("Altar"));
+            AlchimiaUtils.format("<gradient:#57ebbe:#f6fa2a>${alchimiavitae.av_ornate_cauldron.name}</gradient>"),
+            "${alchimiavitae.av_ornate_cauldron.lore.01}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.altar}"));
 
     private static final Map<PotionEffectType, int[]> potEffectsMap = new HashMap<>();
 
     public static final SlimefunItemStack POTION_OF_OSMOSIS = AlchimiaUtils.makePotion(
             "AV_POTION_OF_OSMOSIS",
-            AlchimiaUtils.format("<gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"),
+            AlchimiaUtils.format("<gradient:#6274e7:#8752a3>${alchimiavitae.av_potion_of_osmosis.name}</gradient>"),
             Color.SILVER, potEffectsMap, false,
-            "&6Absorbs your potion effects",
-            "&6and stores them in a bottle on &eRight Click",
-            "", AlchimiaUtils.itemType("Potion"));
+            "${alchimiavitae.av_potion_of_osmosis.lore.01}",
+            "${alchimiavitae.av_potion_of_osmosis.lore.02}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.potion}"));
 
     private static final Configuration cfg = AlchimiaVitae.i().getConfig();
 
@@ -248,9 +248,9 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack BENEVOLENT_BREW = AlchimiaUtils.makePotion(
             "AV_BENEVOLENT_BREW_POTION",
-            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>Benevolent Brew</gradient>"),
+            AlchimiaUtils.format("<gradient:#2ddae0:#31f876>${alchimiavitae.av_benevolent_brew_potion.name}</gradient>"),
             Color.LIME, potEffectsMap, false,
-            "", AlchimiaUtils.itemType("Potion"));
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.potion}"));
 
     static {
         // Clear the map from the previous usage
@@ -281,18 +281,18 @@ public class AlchimiaItems {
 
     public static final SlimefunItemStack MALEVOLENT_CONCOCTION = AlchimiaUtils.makePotion(
             "AV_MALEVOLENT_CONCOCTION_SPLASH_POTION",
-            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>Malevolent Concoction</gradient>"),
+            AlchimiaUtils.format("<gradient:#ff5555:#ffa012>${alchimiavitae.av_malevolent_concoction_splash_potion.name}</gradient>"),
             Color.MAROON, potEffectsMap, true,
-            "", AlchimiaUtils.itemType("Potion"));
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.potion}"));
     // }}}
 
     // {{{ Altar of Infusion (Infusion)
     public static final SlimefunItemStack ALTAR_OF_INFUSION = new SlimefunItemStack("AV_ALTAR_OF_INFUSION",
-            Material.LODESTONE, AlchimiaUtils.format("<gradient:#f78770:#ff607b>Altar of Infusion</gradient>"),
-            "&5Adds powerful effects to tools", "",
-            "&7Only works on gold, iron, diamond, netherite and",
-            "&7gear, as well as fishing rods, bows, and crossbows",
-            "", AlchimiaUtils.itemType("Altar"));
+            Material.LODESTONE, AlchimiaUtils.format("<gradient:#f78770:#ff607b>${alchimiavitae.av_altar_of_infusion.name}</gradient>"),
+            "${alchimiavitae.av_altar_of_infusion.lore.01}", "",
+            "${alchimiavitae.av_altar_of_infusion.lore.02}",
+            "${alchimiavitae.av_altar_of_infusion.lore.03}",
+            "", AlchimiaUtils.itemType("${alchimiavitae.itemtype.altar}"));
     // }}}
 
 }

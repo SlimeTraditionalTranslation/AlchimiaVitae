@@ -60,10 +60,10 @@ public class Setup {
 
         CustomItemStack condensedSoulRecipeItem = new CustomItemStack(
                 Material.DROWNED_SPAWN_EGG,
-                "&bAny Mob",
-                "&7Wither Skeletons and",
-                "&7Withers have a chance",
-                "&7to drop more souls...");
+                "${alchimiavitae.soul_collector.mobtype.name}",
+                "${alchimiavitae.soul_collector.mobtype.lore.01}",
+                "${alchimiavitae.soul_collector.mobtype.lore.02}",
+                "${alchimiavitae.soul_collector.mobtype.lore.03}");
 
         new SlimefunItem(AlchimiaUtils.ItemGroups.GENERAL, AlchimiaItems.CONDENSED_SOUL, AlchimiaUtils.RecipeTypes.SOUL_COLLECTOR, new ItemStack[] {
                 null, null, null,
@@ -173,62 +173,62 @@ public class Setup {
     // {{{ Researches
     private static void setupResearches(AlchimiaVitae instance) {
         new Research(AbstractAddon.createKey("soul"), 131072,
-                "Manipulation of life force", 15)
+                "${alchimiavitae.researches.soul}", 15)
                 .addItems(AlchimiaItems.CONDENSED_SOUL, AlchimiaItems.SOUL_COLLECTOR)
                 .register();
 
         new Research(AbstractAddon.createKey("magic_plants"), 131073,
-                "Powerful plants", 20)
+                "${alchimiavitae.researches.magic_plants}", 20)
                 .addItems(AlchimiaItems.PLANT_INFUSION_CHAMBER, AlchimiaItems.LIGHT_MAGIC_PLANT, AlchimiaItems.DARK_MAGIC_PLANT)
                 .register();
 
         new Research(AbstractAddon.createKey("magic_essence"), 131074,
-                "Powerful powder", 10)
+                "${alchimiavitae.researches.magic_essence}", 10)
                 .addItems(AlchimiaItems.LIGHT_ESSENCE, AlchimiaItems.DARK_ESSENCE)
                 .register();
 
         new Research(AbstractAddon.createKey("exp_crystals"), 131075,
-                "Pure crystalline energy", 12)
+                "${alchimiavitae.researches.exp_crystals}", 12)
                 .addItems(AlchimiaItems.EXP_CRYSTALLIZER, AlchimiaItems.EXP_CRYSTAL)
                 .register();
 
         new Research(AbstractAddon.createKey("magic_steel"), 131076,
-                "Mystical metals", 16)
+                "${alchimiavitae.researches.magic_steel}", 16)
                 .addItems(AlchimiaItems.DARKSTEEL, AlchimiaItems.ILLUMIUM)
                 .register();
 
         new Research(AbstractAddon.createKey("divine_altar"), 131077,
-                "The Ancient Altar's lost cousin", 36)
+                "${alchimiavitae.researches.divine_altar}", 36)
                 .addItems(AlchimiaItems.DIVINE_ALTAR)
                 .register();
 
         new Research(AbstractAddon.createKey("metal_amalgamation"), 131078,
-                "Amalgam", 19)
+                "${alchimiavitae.researches.metal_amalgamation}", 19)
                 .addItems(AlchimiaItems.MOLTEN_MYSTERY_METAL, AlchimiaItems.MYSTERY_METAL)
                 .register();
 
         new Research(AbstractAddon.createKey("cosmic_cauldron"), 131079,
-                "Advanced brewery", 36)
+                "${alchimiavitae.researches.cosmic_cauldron}", 36)
                 .addItems(AlchimiaItems.COSMIC_CAULDRON)
                 .register();
 
         new Research(AbstractAddon.createKey("potion_of_osmosis"), 131080,
-                "Absorbing and reflecting", 30)
+                "${alchimiavitae.researches.potion_of_osmosis}", 30)
                 .addItems(AlchimiaItems.POTION_OF_OSMOSIS)
                 .register();
 
         new Research(AbstractAddon.createKey("benevolent_brew"), 131081,
-                "A blessing from Gaia herself", 20)
+                "${alchimiavitae.researches.benevolent_brew}", 20)
                 .addItems(AlchimiaItems.BENEVOLENT_BREW)
                 .register();
 
         new Research(AbstractAddon.createKey("malevolent_concoction"), 131082,
-                "A demonic liquid", 20)
+                "${alchimiavitae.researches.malevolent_concoction}", 20)
                 .addItems(AlchimiaItems.MALEVOLENT_CONCOCTION)
                 .register();
 
         new Research(AbstractAddon.createKey("altar_of_infusion"), 131083,
-                "Infusion", 36)
+                "${alchimiavitae.researches.altar_of_infusion}", 36)
                 .addItems(AlchimiaItems.ALTAR_OF_INFUSION)
                 .register();
     }
