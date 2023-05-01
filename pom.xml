@@ -150,9 +150,9 @@
 
         <!-- Minecraft libraries -->
         <dependency>
-            <groupId>io.github.Mooy1</groupId>
+            <groupId>com.github.SlimeTraditionalTranslation</groupId>
             <artifactId>InfinityLib</artifactId>
-            <version>1.3.9</version>
+            <version>eeb230fde4</version>
             <scope>compile</scope>
         </dependency>
 
