@@ -1,6 +1,6 @@
 name: AlchimiaVitae
 author: Apeiros-46B
-description: 黏液科技附加，新增了一些煉金術、草藥和一些些魔法
+description: 黏液科技附加「煉金術自傳」繁體中文版。
 main: me.apeiros.alchimiavitae.AlchimiaVitae
 version: ${project.version}
 api-version: 1.17

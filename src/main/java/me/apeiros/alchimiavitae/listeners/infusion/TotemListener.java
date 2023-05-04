@@ -22,6 +22,7 @@ import org.bukkit.potion.PotionEffectType;
 import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.items.crafters.AltarOfInfusion.Infusion;
+import org.mini2Dx.gettext.GetText;
 
 /**
  * {@link Listener} for Totem Battery (chestplate) infusion
@@ -77,12 +78,12 @@ public class TotemListener implements Listener {
         if (e.getItem() == null || !e.getItem().isSimilar(new ItemStack(Material.TOTEM_OF_UNDYING))) {
             // If the item isn't a totem, inform the player of the current number of totems
             p.sendMessage(AlchimiaUtils.format(
-                    "${alchimiavitae.totem_battery.info.message.01}"
+                    GetText.tr("<green>There ")
                     + (totems == 1
-                          ? "${alchimiavitae.totem_battery.info.message.02}"
-                          : "${alchimiavitae.totem_battery.info.message.03}" + totems + "${alchimiavitae.totem_battery.info.message.04}"
+                          ? GetText.tr("is 1 totem")
+                          : GetText.tr("are {0} totems", totems)
                       )
-                    + "${alchimiavitae.totem_battery.info.message.05}"
+                    + GetText.tr(" stored in the Battery of Totems.")
                 )
             );
 
@@ -92,7 +93,7 @@ public class TotemListener implements Listener {
 
         // Check if there are already 8 totems
         if (totems > 7) {
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.totem_battery.full}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>There is no more space for this totem!")));
             p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1F, 1F);
             return;
         }
@@ -112,14 +113,14 @@ public class TotemListener implements Listener {
         p.getInventory().getChestplate().setItemMeta(meta);
 
         // Inform the player of the new number of totems
-        p.sendMessage(AlchimiaUtils.format("${alchimiavitae.totem_battery.added.message.01}"));
+        p.sendMessage(AlchimiaUtils.format(GetText.tr("<green>Your totem has been added to the Battery of Totems.")));
         p.sendMessage(AlchimiaUtils.format(
-                "${alchimiavitae.totem_battery.added.message.02.01}"
+                GetText.tr("<green>There ")
                 + (totems == 1
-                      ? "${alchimiavitae.totem_battery.added.message.02.02}"
-                      : "${alchimiavitae.totem_battery.added.message.02.03}" + totems + "${alchimiavitae.totem_battery.added.message.02.04}"
+                      ? GetText.tr("is now 1 totem")
+                      : GetText.tr("are now {0} totems", totems)
                   )
-                + "${alchimiavitae.totem_battery.added.message.02.05}"
+                + GetText.tr(" stored.")
             )
         );
 
@@ -203,12 +204,12 @@ public class TotemListener implements Listener {
         };
 
         p.sendMessage(AlchimiaUtils.format(
-                color + "${alchimiavitae.totem_battery.left.message.01}"
+                color + GetText.tr("There ")
                 + (totems == 1
-                      ? "${alchimiavitae.totem_battery.left.message.02}"
-                      : "${alchimiavitae.totem_battery.left.message.03}" + (totems == 0 ? "${alchimiavitae.totem_battery.left.message.04}" : totems) + "${alchimiavitae.totem_battery.left.message.05}"
+                      ? GetText.tr("is 1 totem")
+                      : GetText.tr("are {0} totems", totems)
                   )
-                + "${alchimiavitae.totem_battery.left.message.06}"
+                + GetText.tr(" left in the Battery of Totems.")
             )
         );
 

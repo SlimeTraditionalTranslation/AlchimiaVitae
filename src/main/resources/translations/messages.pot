@@ -1,0 +1,666 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-04 10:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:48
+msgid "&b&oExtract using the Soul Collector"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:52
+msgid "&b&oInfuse using the Plant Infusion Chamber"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:56
+msgid "&b&oCrystallize using the Experience Crystallizer"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:60
+msgid "&b&oFabricate using the Divine Altar"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:64
+msgid "&b&oBrew using the Cosmic Cauldron"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:68
+msgid "&b&oInfuse using the Altar of Infusion"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:82
+msgid "&6Alchimia Vitae &7- &2General"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:86
+msgid "&6Alchimia Vitae &7- &5Transmutation"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:90
+msgid "&6Alchimia Vitae &7- &dInfusion"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:94
+msgid "&6Alchimia Vitae"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:121
+msgid "<blue> (<italic>AlchimiaVitae<blue>)"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:81
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:118
+msgid "<green>There "
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:83
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:209
+msgid "is 1 totem"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:84
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:210
+#, java-format
+msgid "are {0} totems"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:86
+msgid " stored in the Battery of Totems."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:96
+msgid "<red>There is no more space for this totem!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:116
+msgid "<green>Your totem has been added to the Battery of Totems."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:120
+msgid "is now 1 totem"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:121
+#, java-format
+msgid "are now {0} totems"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:123
+msgid " stored."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:207
+msgid "There "
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:212
+msgid " left in the Battery of Totems."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:32
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:57
+msgid "<gradient:#ff68fc:#ff9a5c>Input</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:35
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:38
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:60
+msgid "<gradient:#39f792:#5c95ff>Craft</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:35
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:60
+msgid "&aClick to craft"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:41
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:63
+msgid "<gradient:#5cb8ff:#39f7e1>Output</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:46
+msgid "<gradient:#6baefa:#7145b0>Soul Collector</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:47
+msgid "&bExtracts souls"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:48
+msgid "&7Killed mobs will drop souls"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:49
+msgid "&73x EXP drops from all mobs"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:50
+msgid "&7Wither-related mobs will"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:51
+msgid "&7drop additional souls"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:52
+msgid "Tool"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:65
+msgid "<gradient:#549c64:#1de078>Plant Infusion Chamber</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:66
+msgid "&bInfuses plants with dark"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:67
+msgid "&bor light energy using"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:68
+msgid "&bMagical Lumps and Souls"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:72
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:82
+msgid "Machine"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:76
+msgid "<gradient:#50fa75:#3dd2ff>Experience Crystallizer</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:77
+msgid "&aForms experience into a crystalline,"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:78
+msgid "&adurable, and stable form"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:87
+msgid "<gradient:#6baefa:#7145b0>Condensed Soul</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:88
+msgid "&bA soul, condensed into an orb"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:89
+msgid "&9&oPerhaps there is a way"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:90
+msgid "&9&oto manipulate its power..."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:91
+msgid "Raw Magic Resource"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:103
+msgid "<gradient:#2ddae0:#31f876>Plant of Light Magic</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:104
+msgid "&aRadiates an empyreal glow"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:105
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:120
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:134
+msgid "Base Magic Resource"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:117
+msgid "<gradient:#ff5555:#ffa012>Plant of Dark Magic</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:118
+msgid "&cIt's taking in a bit too much"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:119
+msgid "&clight to be photosynthesizing"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:132
+msgid "<gradient:#50fa75:#3dd2ff>Experience Crystal</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:133
+msgid "&aCrystallized."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:146
+msgid "<gradient:#2ddae0:#31f876>Light Essence</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:147
+msgid "&aPulsates with luminescence"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:148
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:155
+msgid "Processed Magic Resource"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:152
+msgid "<gradient:#ff5555:#ffa012>Dark Essence</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:153
+msgid "&cAbsorbs light like a"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:154
+msgid "&csponge absorbs water"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:159
+msgid "<gradient:#2ddae0:#31f876>Illumium Ingot</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:160
+msgid "&aIt energetically effuses light in your hand"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:161
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:175
+msgid "Enriched Magic Resource"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:173
+msgid "<gradient:#ff5555:#ffa012>Darksteel Ingot</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:174
+msgid "&cIt radiates... with darkness?"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:189
+msgid "<gradient:#ff5555:#ff6cfd>Divine Altar</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:190
+msgid "&5A sacred apparatus for the"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:191
+msgid "&5performance of ancient rituals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:192
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:212
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:296
+msgid "Altar"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:196
+msgid "<gradient:#ff6745:#ff5555>Molten Mystery Metal</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:197
+msgid "&6A conglomerate of different metals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:198
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:204
+msgid "Transmutation Resource"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:202
+msgid "<gradient:#ff6745:#ff5555>Mystery Metal Ingot</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:203
+msgid "&6Contains many metals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:210
+msgid "<gradient:#57ebbe:#f6fa2a>Cosmic Cauldron</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:211
+msgid "&2An altar for brewing advanced potions"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:218
+msgid "<gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:220
+msgid "&6Absorbs your potion effects"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:221
+msgid "&6and stores them in a bottle on &eRight Click"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:222
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:254
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:287
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:71
+msgid "Potion"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:252
+msgid "<gradient:#2ddae0:#31f876>Benevolent Brew</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:285
+msgid "<gradient:#ff5555:#ffa012>Malevolent Concoction</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:292
+msgid "<gradient:#f78770:#ff607b>Altar of Infusion</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:293
+msgid "&5Adds powerful effects to tools"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:294
+msgid "&7Only works on gold, iron, diamond, netherite and"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:295
+msgid "&7gear, as well as fishing rods, bows, and crossbows"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:64
+msgid "&bAny Mob"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:65
+msgid "&7Wither Skeletons and"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:66
+msgid "&7Withers have a chance"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:67
+msgid "&7to drop more souls..."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:177
+msgid "Manipulation of life force"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:182
+msgid "Powerful plants"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:187
+msgid "Powerful powder"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:192
+msgid "Pure crystalline energy"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:197
+msgid "Mystical metals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:202
+msgid "The Ancient Altar's lost cousin"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:207
+msgid "Amalgam"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:212
+msgid "Advanced brewery"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:217
+msgid "Absorbing and reflecting"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:222
+msgid "A blessing from Gaia herself"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:227
+msgid "A demonic liquid"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:232
+msgid "Infusion"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:201
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:265
+msgid "<red>That recipe is invalid!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:83
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:85
+msgid "&a&oA gold, iron, diamond,"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:83
+msgid "&a&oor netherite axe or sword"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:84
+msgid "&a&oA bow or crossbow"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:85
+msgid "&a&oor netherite hoe"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:86
+msgid "&a&oA gold, iron, diamond, or"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:86
+msgid "&a&onetherite chestplate"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:87
+msgid "&a&oA fishing rod"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:277
+msgid "<red>There is nothing to infuse!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:283
+msgid "<red>You cannot infuse that item!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:291
+msgid "<red>This item already has an infusion!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:297
+msgid "<red>You cannot apply that infusion to this item!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:309
+msgid "<gray>Infusion:"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:405
+msgid "<red><bold>Destructive Criticals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:407
+msgid "&c&lDestructive Criticals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:408
+msgid "&4Grants a small chance to give your opponent"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:409
+msgid "&4negative status effects on a critical hit,"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:410
+msgid "&4as well as deal additional damage to armor."
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:414
+msgid "<aqua>Phantom Criticals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:416
+msgid "&bPhantom Criticals"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:417
+msgid "&7Grants a small chance to deal extra damage"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:418
+msgid "&7on a critical hit, which bypasses armor"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:424
+msgid "<dark_green>Forceful"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:426
+msgid "&2Forceful"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:427
+msgid "&2Grants the ability to fire arrows that"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:428
+msgid "&2travel further and deal more damage"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:432
+msgid "<red>Healing"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:434
+msgid "&cHealing"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:435
+msgid "&cGrants the ability to heal hit"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:436
+msgid "&ctargets instead of harming them"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:440
+msgid "<light_purple>True Aim"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:442
+msgid "&dTrue Aim"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:443
+msgid "&5Grants the ability to fire arrows"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:444
+msgid "&5that are not affected by gravity"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:448
+msgid "<dark_red><bold>Volatility"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:450
+msgid "&4&lVolatility"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:451
+msgid "&cGrants the ability to shoot fireballs"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:457
+msgid "<gold><bold>Battery of Totems"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:459
+msgid "&6&lTotem Battery"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:460
+msgid "&6Stores up to 8 Totems of Undying which will resurrect you"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:461
+msgid "&eStore a totem by &7&lShift-Right-Clicking &ewhile holding"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:462
+msgid "&eone and while an infused chestplate is worn"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:468
+msgid "<green>Knockback"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:470
+msgid "&aKnockback"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:471
+msgid "&aPushes targets away instead"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:472
+msgid "&aof pulling them towards you"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:478
+msgid "<green>Automatic Re-plant"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:480
+msgid "&aAutomatic Re-plant"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:481
+msgid "&2Grants the ability to automatically replant"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:482
+msgid "&2fully grown crops when harvesting them"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/general/SoulCollector.java:42
+msgid "<red>You cannot hurt a player using the Soul Collector!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:53
+msgid "<red>There are no effects to absorb!"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:68
+msgid "<gradient:#6fe3e1:#53e6a6>Coruscating Potion</gradient>"
+msgstr ""
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:70
+msgid ""
+"<green>Created from a <gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"
+msgstr ""

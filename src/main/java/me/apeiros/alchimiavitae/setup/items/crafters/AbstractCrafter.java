@@ -29,6 +29,7 @@ import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
+import org.mini2Dx.gettext.GetText;
 
 /**
  * Shared superclass which {@link AlchimiaVitae}'s
@@ -53,13 +54,13 @@ abstract class AbstractCrafter<T> extends CraftingBlock {
 
     // {{{ Menu ItemStacks
     protected final ItemStack IN_BG_ITEM = new CustomItemStack(Material.ORANGE_STAINED_GLASS_PANE,
-            AlchimiaUtils.format("<gradient:#ff68fc:#ff9a5c>${alchimiavitae.menuitem.input}</gradient>"));
+            AlchimiaUtils.format(GetText.tr("<gradient:#ff68fc:#ff9a5c>Input</gradient>")));
 
     protected final ItemStack CRAFT_BTN_ITEM = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,
-            AlchimiaUtils.format("<gradient:#39f792:#5c95ff>${alchimiavitae.menuitem.craft}</gradient>"), "${alchimiavitae.menuitem.craft.lore}");
+            AlchimiaUtils.format(GetText.tr("<gradient:#39f792:#5c95ff>Craft</gradient>")), GetText.tr("&aClick to craft"));
 
     protected final ItemStack OUT_BG_ITEM = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE,
-            AlchimiaUtils.format("<gradient:#5cb8ff:#39f7e1>${alchimiavitae.menuitem.output}</gradient>"));
+            AlchimiaUtils.format(GetText.tr("<gradient:#5cb8ff:#39f7e1>Output</gradient>")));
     // }}}
 
     // {{{ Abstract methods
@@ -197,7 +198,7 @@ abstract class AbstractCrafter<T> extends CraftingBlock {
 
         // Invalid recipe
         if (item == null) {
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.menuitem.craft.invalid}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>That recipe is invalid!")));
             return;
         }
 

@@ -18,6 +18,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
 import me.apeiros.alchimiavitae.AlchimiaUtils;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
+import org.mini2Dx.gettext.GetText;
 
 public class SoulCollector extends SlimefunItem {
 
@@ -38,7 +39,7 @@ public class SoulCollector extends SlimefunItem {
 
             // The Soul Collector cannot be used on players
             e.setCancelled(true);
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.soul_collector.message}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>You cannot hurt a player using the Soul Collector!")));
             p.playSound(p.getLocation(), Sound.BLOCK_GLASS_BREAK, 1, 1);
         };
     }

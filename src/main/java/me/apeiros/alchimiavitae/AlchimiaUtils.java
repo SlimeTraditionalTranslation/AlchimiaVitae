@@ -28,6 +28,7 @@ import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
+import org.mini2Dx.gettext.GetText;
 
 /**
  * Holds utility classes and methods of {@link AlchimiaVitae}
@@ -44,27 +45,27 @@ public class AlchimiaUtils {
 
         public static final RecipeType SOUL_COLLECTOR = new RecipeType(
                 AbstractAddon.createKey("soul_collector_type"), AlchimiaItems.SOUL_COLLECTOR,
-                "", "${alchimiavitae.recipetype.soul_collector_type}");
+                "", GetText.tr("&b&oExtract using the Soul Collector"));
 
         public static final RecipeType PLANT_INFUSION_CHAMBER = new RecipeType(
                 AbstractAddon.createKey("plant_infusion_chamber_type"), AlchimiaItems.PLANT_INFUSION_CHAMBER,
-                "", "${alchimiavitae.recipetype.plant_infusion_chamber_type}");
+                "", GetText.tr("&b&oInfuse using the Plant Infusion Chamber"));
 
         public static final RecipeType EXP_CRYSTALLIZER = new RecipeType(
                 AbstractAddon.createKey("exp_crystallizer_type"), AlchimiaItems.EXP_CRYSTALLIZER,
-                "", "${alchimiavitae.recipetype.exp_crystallizer_type}");
+                "", GetText.tr("&b&oCrystallize using the Experience Crystallizer"));
 
         public static final RecipeType DIVINE_ALTAR = new RecipeType(
                 AbstractAddon.createKey("divine_altar_type"), AlchimiaItems.DIVINE_ALTAR,
-                "", "${alchimiavitae.recipetype.divine_altar_type}");
+                "", GetText.tr("&b&oFabricate using the Divine Altar"));
 
         public static final RecipeType COSMIC_CAULDRON = new RecipeType(
                 AbstractAddon.createKey("cosmic_cauldron_type"), AlchimiaItems.COSMIC_CAULDRON,
-                "", "${alchimiavitae.recipetype.cosmic_cauldron_type}");
+                "", GetText.tr("&b&oBrew using the Cosmic Cauldron"));
 
         public static final RecipeType INFUSION_ALTAR = new RecipeType(
                 AbstractAddon.createKey("infusion_altar_type"), AlchimiaItems.ALTAR_OF_INFUSION,
-                "", "${alchimiavitae.recipetype.infusion_altar_type}");
+                "", GetText.tr("&b&oInfuse using the Altar of Infusion"));
 
     }
     // }}}
@@ -78,19 +79,19 @@ public class AlchimiaUtils {
 
         public static final ItemGroup GENERAL = new SubGroup(
                 "av_general",
-                new CustomItemStack(Material.ENCHANTED_BOOK, "${alchimiavitae.itemgroup.av_general}"));
+                new CustomItemStack(Material.ENCHANTED_BOOK, GetText.tr("&6Alchimia Vitae &7- &2General")));
 
         public static final ItemGroup ALTAR_RECIPES = new SubGroup(
                 "av_altar_recipes",
-                new CustomItemStack(Material.ENCHANTING_TABLE, "${alchimiavitae.itemgroup.av_altar_recipes}"));
+                new CustomItemStack(Material.ENCHANTING_TABLE, GetText.tr("&6Alchimia Vitae &7- &5Transmutation")));
 
         public static final ItemGroup INFUSIONS = new SubGroup(
                 "av_infusions",
-                new CustomItemStack(Material.NETHER_STAR, "${alchimiavitae.itemgroup.av_infusions}"));
+                new CustomItemStack(Material.NETHER_STAR, GetText.tr("&6Alchimia Vitae &7- &dInfusion")));
 
         public static final ItemGroup MAIN = new MultiGroup(
                 "alchimia_vitae",
-                new CustomItemStack(Material.TOTEM_OF_UNDYING, "${alchimiavitae.itemgroup.alchimia_vitae}"),
+                new CustomItemStack(Material.TOTEM_OF_UNDYING, GetText.tr("&6Alchimia Vitae")),
                 GENERAL, ALTAR_RECIPES, INFUSIONS);
 
     }
@@ -117,7 +118,7 @@ public class AlchimiaUtils {
     }
 
     public static String itemType(String type) {
-        return LCS.serialize(MM.deserialize("<blue>" + type + "${alchimiavitae.itemtype.main}"));
+        return LCS.serialize(MM.deserialize("<blue>" + type + GetText.tr("<blue> (<italic>AlchimiaVitae<blue>)")));
     }
     // }}}
 

@@ -33,6 +33,7 @@ import me.apeiros.alchimiavitae.AlchimiaVitae;
 import me.apeiros.alchimiavitae.setup.AlchimiaItems;
 import me.apeiros.alchimiavitae.setup.items.crafters.AltarOfInfusion.Infusion;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
+import org.mini2Dx.gettext.GetText;
 
 public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
@@ -79,11 +80,11 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         boolean knockbackEnabled        = cfg.getBoolean("options.infusions.infusion-knockback");
 
         // Create placeholder items
-        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, "${alchimiavitae.infuse.valid_melee.01}", "${alchimiavitae.infuse.valid_melee.02}");
-        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, "${alchimiavitae.infuse.valid_ranged.01}");
-        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, "${alchimiavitae.infuse.valid_hoe.01}", "${alchimiavitae.infuse.valid_hoe.02}");
-        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "${alchimiavitae.infuse.valid_chestplate.01}", "${alchimiavitae.infuse.valid_chestplate.02}");
-        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, "${alchimiavitae.infuse.valid_fishingrod.01}");
+        CustomItemStack validMelee      = new CustomItemStack(Material.DIAMOND_SWORD, GetText.tr("&a&oA gold, iron, diamond,"), GetText.tr("&a&oor netherite axe or sword"));
+        CustomItemStack validRanged     = new CustomItemStack(Material.BOW, GetText.tr("&a&oA bow or crossbow"));
+        CustomItemStack validHoe        = new CustomItemStack(Material.DIAMOND_HOE, GetText.tr("&a&oA gold, iron, diamond,"), GetText.tr("&a&oor netherite hoe"));
+        CustomItemStack validChestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, GetText.tr("&a&oA gold, iron, diamond, or"), GetText.tr("&a&onetherite chestplate"));
+        CustomItemStack validFishingRod = new CustomItemStack(Material.FISHING_ROD, GetText.tr("&a&oA fishing rod"));
 
         // Get ItemGroup and RecipeType
         ItemGroup ig = AlchimiaUtils.ItemGroups.INFUSIONS;
@@ -261,7 +262,7 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure the recipe is valid
         if (infusion == null) {
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.menuitem.craft.invalid}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>That recipe is invalid!")));
             return;
         }
         // }}}
@@ -273,13 +274,13 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure there is a tool
         if (tool == null || meta == null || tool.getType().equals(Material.AIR)) {
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.menuitem.craft.infusion.nothing}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>There is nothing to infuse!")));
             return;
         }
 
         // Make sure the tool is valid
         if (!Infusion.ANY.canApply(tool)) {
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.menuitem.craft.infusion.cant}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>You cannot infuse that item!")));
             return;
         }
 
@@ -287,13 +288,13 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
 
         // Make sure the tool is not already infused
         if (Infusion.ANY.has(pdc)) {
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.menuitem.craft.infusion.already}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>This item already has an infusion!")));
             return;
         }
 
         // Make sure the infusion is applicable to the tool
         if (!infusion.canApply(tool)) {
-            p.sendMessage(AlchimiaUtils.format("${alchimiavitae.menuitem.craft.infusion.cant.tool}"));
+            p.sendMessage(AlchimiaUtils.format(GetText.tr("<red>You cannot apply that infusion to this item!")));
             return;
         }
         // }}}
@@ -305,7 +306,7 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         List<String> lore = meta.getLore() != null ? meta.getLore() : new ArrayList<>();
 
         lore.add("");
-        lore.add(AlchimiaUtils.format("${alchimiavitae.infuse.itemlore}"));
+        lore.add(AlchimiaUtils.format(GetText.tr("<gray>Infusion:")));
 
         // Infusion name to lore
         lore.add(AlchimiaUtils.format("<dark_gray>› " + infusion.lore()));
@@ -401,84 +402,84 @@ public class AltarOfInfusion extends AbstractCrafter<Infusion> {
         // {{{ Melee weapons
         DESTRUCTIVE_CRITS(
                 "infusion_destructivecrits",
-                "${alchimiavitae.infuse.infusion_destructivecrits}",
+                GetText.tr("<red><bold>Destructive Criticals"),
 
-                new SlimefunItemStack("AV_DESTRUCTIVE_CRITS_INFUSION", Material.TNT, "${alchimiavitae.av_destructive_crits_infusion.name}",
-                        "${alchimiavitae.av_destructive_crits_infusion.lore.01}",
-                        "${alchimiavitae.av_destructive_crits_infusion.lore.02}",
-                        "${alchimiavitae.av_destructive_crits_infusion.lore.03}")),
+                new SlimefunItemStack("AV_DESTRUCTIVE_CRITS_INFUSION", Material.TNT, GetText.tr("&c&lDestructive Criticals"),
+                        GetText.tr("&4Grants a small chance to give your opponent"),
+                        GetText.tr("&4negative status effects on a critical hit,"),
+                        GetText.tr("&4as well as deal additional damage to armor."))),
 
         PHANTOM_CRITS (
                 "infusion_phantomcrits",
-                "${alchimiavitae.infuse.infusion_phantomcrits}",
+                GetText.tr("<aqua>Phantom Criticals"),
 
-                new SlimefunItemStack("AV_PHANTOM_CRITS_INFUSION", Material.PHANTOM_MEMBRANE, "${alchimiavitae.av_phantom_crits_infusion.name}",
-                        "${alchimiavitae.av_phantom_crits_infusion.lore.01}",
-                        "${alchimiavitae.av_phantom_crits_infusion.lore.02}")),
+                new SlimefunItemStack("AV_PHANTOM_CRITS_INFUSION", Material.PHANTOM_MEMBRANE, GetText.tr("&bPhantom Criticals"),
+                        GetText.tr("&7Grants a small chance to deal extra damage"),
+                        GetText.tr("&7on a critical hit, which bypasses armor"))),
         // }}}
 
         // {{{ Ranged weapons
         FORCEFUL(
                 "infusion_forceful",
-                "${alchimiavitae.infuse.infusion_forceful}",
+                GetText.tr("<dark_green>Forceful"),
 
-                new SlimefunItemStack("AV_FORCEFUL_INFUSION", Material.PISTON, "${alchimiavitae.av_forceful_infusion.name}",
-                        "${alchimiavitae.av_forceful_infusion.lore.01}",
-                        "${alchimiavitae.av_forceful_infusion.lore.02}")),
+                new SlimefunItemStack("AV_FORCEFUL_INFUSION", Material.PISTON, GetText.tr("&2Forceful"),
+                        GetText.tr("&2Grants the ability to fire arrows that"),
+                        GetText.tr("&2travel further and deal more damage"))),
 
         HEALING(
                 "infusion_healing",
-                "${alchimiavitae.infuse.infusion_healing}",
+                GetText.tr("<red>Healing"),
 
-                new SlimefunItemStack("AV_HEALING_INFUSION", Material.REDSTONE, "${alchimiavitae.av_healing_infusion.name}",
-                        "${alchimiavitae.av_healing_infusion.lore.01}",
-                        "${alchimiavitae.av_healing_infusion.lore.02}")),
+                new SlimefunItemStack("AV_HEALING_INFUSION", Material.REDSTONE, GetText.tr("&cHealing"),
+                        GetText.tr("&cGrants the ability to heal hit"),
+                        GetText.tr("&ctargets instead of harming them"))),
 
         TRUE_AIM(
                 "infusion_trueaim",
-                "${alchimiavitae.infuse.infusion_trueaim}",
+                GetText.tr("<light_purple>True Aim"),
 
-                new SlimefunItemStack("AV_TRUE_AIM_INFUSION", Material.SHULKER_SHELL, "${alchimiavitae.av_true_aim_infusion.name}",
-                        "${alchimiavitae.av_true_aim_infusion.lore.01}",
-                        "${alchimiavitae.av_true_aim_infusion.lore.02}")),
+                new SlimefunItemStack("AV_TRUE_AIM_INFUSION", Material.SHULKER_SHELL, GetText.tr("&dTrue Aim"),
+                        GetText.tr("&5Grants the ability to fire arrows"),
+                        GetText.tr("&5that are not affected by gravity"))),
 
         VOLATILITY(
                 "infusion_volatile",
-                "${alchimiavitae.infuse.infusion_volatile}",
+                GetText.tr("<dark_red><bold>Volatility"),
 
-                new SlimefunItemStack("AV_VOLATILE_INFUSION", Material.FIRE_CHARGE, "${alchimiavitae.av_volatile_infusion.name}",
-                        "${alchimiavitae.av_volatile_infusion.lore.01}")),
+                new SlimefunItemStack("AV_VOLATILE_INFUSION", Material.FIRE_CHARGE, GetText.tr("&4&lVolatility"),
+                        GetText.tr("&cGrants the ability to shoot fireballs"))),
         // }}}
 
         // {{{ Chestplate
         TOTEM_BATTERY(
                 "infusion_totemstorage",
-                "${alchimiavitae.infuse.infusion_totemstorage}",
+                GetText.tr("<gold><bold>Battery of Totems"),
 
-                new SlimefunItemStack("AV_TOTEM_BATTERY_INFUSION", Material.TOTEM_OF_UNDYING, "${alchimiavitae.av_totem_battery_infusion.name}",
-                        "${alchimiavitae.av_totem_battery_infusion.lore.01}",
-                        "${alchimiavitae.av_totem_battery_infusion.lore.02}",
-                        "${alchimiavitae.av_totem_battery_infusion.lore.03}")),
+                new SlimefunItemStack("AV_TOTEM_BATTERY_INFUSION", Material.TOTEM_OF_UNDYING, GetText.tr("&6&lTotem Battery"),
+                        GetText.tr("&6Stores up to 8 Totems of Undying which will resurrect you"),
+                        GetText.tr("&eStore a totem by &7&lShift-Right-Clicking &ewhile holding"),
+                        GetText.tr("&eone and while an infused chestplate is worn"))),
         // }}}
 
         // {{{ Fishing rod
         KNOCKBACK(
                 "infusion_knockback",
-                "${alchimiavitae.infuse.infusion_knockback}",
+                GetText.tr("<green>Knockback"),
 
-                new SlimefunItemStack("AV_KNOCKBACK_INFUSION", Material.SLIME_BALL, "${alchimiavitae.av_knockback_infusion.name}",
-                        "${alchimiavitae.av_knockback_infusion.lore.01}",
-                        "${alchimiavitae.av_knockback_infusion.lore.02}")),
+                new SlimefunItemStack("AV_KNOCKBACK_INFUSION", Material.SLIME_BALL, GetText.tr("&aKnockback"),
+                        GetText.tr("&aPushes targets away instead"),
+                        GetText.tr("&aof pulling them towards you"))),
         // }}}
 
         // {{{ Hoe
         AUTO_REPLANT(
                 "infusion_autoreplant",
-                "${alchimiavitae.infuse.infusion_autoreplant}",
+                GetText.tr("<green>Automatic Re-plant"),
 
-                new SlimefunItemStack("AV_AUTO_REPLANT_INFUSION", Material.WHEAT, "${alchimiavitae.av_auto_replant_infusion.name}",
-                        "${alchimiavitae.av_auto_replant_infusion.lore.01}",
-                        "${alchimiavitae.av_auto_replant_infusion.lore.02}")),
+                new SlimefunItemStack("AV_AUTO_REPLANT_INFUSION", Material.WHEAT, GetText.tr("&aAutomatic Re-plant"),
+                        GetText.tr("&2Grants the ability to automatically replant"),
+                        GetText.tr("&2fully grown crops when harvesting them"))),
         // }}}
 
         // Dummy value for checking if an item is infusable in general

@@ -1,0 +1,666 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-04 10:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:48
+msgid "&b&oExtract using the Soul Collector"
+msgstr "&b&o使用靈魂收集者提取"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:52
+msgid "&b&oInfuse using the Plant Infusion Chamber"
+msgstr "&b&o透過植物浸液室進行注入"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:56
+msgid "&b&oCrystallize using the Experience Crystallizer"
+msgstr "&b&o使用經驗結晶機來結晶化"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:60
+msgid "&b&oFabricate using the Divine Altar"
+msgstr "&b&o使用神聖祭壇製造"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:64
+msgid "&b&oBrew using the Cosmic Cauldron"
+msgstr "&b&o使用宇宙鍋釜釀造"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:68
+msgid "&b&oInfuse using the Altar of Infusion"
+msgstr "&b&o使用灌注祭壇注入"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:82
+msgid "&6Alchimia Vitae &7- &2General"
+msgstr "&6煉金術自傳 &7- &2一般"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:86
+msgid "&6Alchimia Vitae &7- &5Transmutation"
+msgstr "&6煉金術自傳 &7- &5煉金術"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:90
+msgid "&6Alchimia Vitae &7- &dInfusion"
+msgstr "&6煉金術自傳 &7- &d注入物"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:94
+msgid "&6Alchimia Vitae"
+msgstr "&6煉金術自傳"
+
+#: main/java/me/apeiros/alchimiavitae/AlchimiaUtils.java:121
+msgid "<blue> (<italic>AlchimiaVitae<blue>)"
+msgstr "<blue>（<italic>煉金術自傳</italic><blue>）"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:81
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:118
+msgid "<green>There "
+msgstr "<green>現在已有 "
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:83
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:209
+msgid "is 1 totem"
+msgstr "1 個"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:84
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:210
+#, java-format
+msgid "are {0} totems"
+msgstr "{0} 個"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:86
+msgid " stored in the Battery of Totems."
+msgstr "圖騰在圖騰電池之中。"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:96
+msgid "<red>There is no more space for this totem!"
+msgstr "<red>已經沒有空間可以裝入此圖騰！"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:116
+msgid "<green>Your totem has been added to the Battery of Totems."
+msgstr "<green>你的圖騰已加入到圖騰電池中。"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:120
+msgid "is now 1 totem"
+msgstr "1 個"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:121
+#, java-format
+msgid "are now {0} totems"
+msgstr "{0} 個"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:123
+msgid " stored."
+msgstr "圖騰在圖騰電池之中。"
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:207
+msgid "There "
+msgstr "現在剩餘 "
+
+#: main/java/me/apeiros/alchimiavitae/listeners/infusion/TotemListener.java:212
+msgid " left in the Battery of Totems."
+msgstr "圖騰在圖騰電池中。"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:32
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:57
+msgid "<gradient:#ff68fc:#ff9a5c>Input</gradient>"
+msgstr "<gradient:#ff68fc:#ff9a5c>輸入</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:35
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:38
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:60
+msgid "<gradient:#39f792:#5c95ff>Craft</gradient>"
+msgstr "<gradient:#39f792:#5c95ff>製作</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:35
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:60
+msgid "&aClick to craft"
+msgstr "&a點擊製作"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:41
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:63
+msgid "<gradient:#5cb8ff:#39f7e1>Output</gradient>"
+msgstr "<gradient:#5cb8ff:#39f7e1>輸出</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:46
+msgid "<gradient:#6baefa:#7145b0>Soul Collector</gradient>"
+msgstr "<gradient:#6baefa:#7145b0>靈魂收集者</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:47
+msgid "&bExtracts souls"
+msgstr "&b提取靈魂"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:48
+msgid "&7Killed mobs will drop souls"
+msgstr "&7殺死生物將掉落靈魂"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:49
+msgid "&73x EXP drops from all mobs"
+msgstr "&7所有生物掉落額外三倍經驗值"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:50
+msgid "&7Wither-related mobs will"
+msgstr "&7凋零相關的生物將會"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:51
+msgid "&7drop additional souls"
+msgstr "&7掉落額外的靈魂"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:52
+msgid "Tool"
+msgstr "工具"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:65
+msgid "<gradient:#549c64:#1de078>Plant Infusion Chamber</gradient>"
+msgstr "<gradient:#549c64:#1de078>植物浸液室</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:66
+msgid "&bInfuses plants with dark"
+msgstr "&b使用魔法顆粒與凝魂"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:67
+msgid "&bor light energy using"
+msgstr "&b對植物注入光或暗"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:68
+msgid "&bMagical Lumps and Souls"
+msgstr "&b魔法能量"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:72
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:82
+msgid "Machine"
+msgstr "機器"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:76
+msgid "<gradient:#50fa75:#3dd2ff>Experience Crystallizer</gradient>"
+msgstr "<gradient:#50fa75:#3dd2ff>經驗結晶機</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:77
+msgid "&aForms experience into a crystalline,"
+msgstr "&a將經驗轉化為結晶、"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:78
+msgid "&adurable, and stable form"
+msgstr "&a耐用且穩定的型態。"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:87
+msgid "<gradient:#6baefa:#7145b0>Condensed Soul</gradient>"
+msgstr "<gradient:#6baefa:#7145b0>凝魂</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:88
+msgid "&bA soul, condensed into an orb"
+msgstr "&b一個靈魂，凝聚成一顆球"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:89
+msgid "&9&oPerhaps there is a way"
+msgstr "&9&o也許有方法"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:90
+msgid "&9&oto manipulate its power..."
+msgstr "&9&o能夠操縱它的力量……"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:91
+msgid "Raw Magic Resource"
+msgstr "原始魔法資源"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:103
+msgid "<gradient:#2ddae0:#31f876>Plant of Light Magic</gradient>"
+msgstr "<gradient:#2ddae0:#31f876>光魔法植物</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:104
+msgid "&aRadiates an empyreal glow"
+msgstr "&a散發出崇高的光芒"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:105
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:120
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:134
+msgid "Base Magic Resource"
+msgstr "基礎魔法資源"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:117
+msgid "<gradient:#ff5555:#ffa012>Plant of Dark Magic</gradient>"
+msgstr "<gradient:#ff5555:#ffa012>暗魔法植物</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:118
+msgid "&cIt's taking in a bit too much"
+msgstr "&c它吸收太多光線，"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:119
+msgid "&clight to be photosynthesizing"
+msgstr "&c不適合進行光合作用"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:132
+msgid "<gradient:#50fa75:#3dd2ff>Experience Crystal</gradient>"
+msgstr "<gradient:#50fa75:#3dd2ff>經驗結晶</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:133
+msgid "&aCrystallized."
+msgstr "&a結晶化。"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:146
+msgid "<gradient:#2ddae0:#31f876>Light Essence</gradient>"
+msgstr "<gradient:#2ddae0:#31f876>光之精華</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:147
+msgid "&aPulsates with luminescence"
+msgstr "&a散發光芒脈動"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:148
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:155
+msgid "Processed Magic Resource"
+msgstr "加工魔法資源"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:152
+msgid "<gradient:#ff5555:#ffa012>Dark Essence</gradient>"
+msgstr "<gradient:#ff5555:#ffa012>暗之精華</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:153
+msgid "&cAbsorbs light like a"
+msgstr "&c像海綿吸水般"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:154
+msgid "&csponge absorbs water"
+msgstr "&c一樣的吸收光線"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:159
+msgid "<gradient:#2ddae0:#31f876>Illumium Ingot</gradient>"
+msgstr "<gradient:#2ddae0:#31f876>光明錠</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:160
+msgid "&aIt energetically effuses light in your hand"
+msgstr "&a在你手中散發出充滿能量的光芒"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:161
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:175
+msgid "Enriched Magic Resource"
+msgstr "強化魔法資源"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:173
+msgid "<gradient:#ff5555:#ffa012>Darksteel Ingot</gradient>"
+msgstr "<gradient:#ff5555:#ffa012>暗鋼錠</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:174
+msgid "&cIt radiates... with darkness?"
+msgstr "&c它散發著……無盡的黑暗？"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:189
+msgid "<gradient:#ff5555:#ff6cfd>Divine Altar</gradient>"
+msgstr "<gradient:#ff5555:#ff6cfd>神聖祭壇</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:190
+msgid "&5A sacred apparatus for the"
+msgstr "&5一個用於進行"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:191
+msgid "&5performance of ancient rituals"
+msgstr "&5古老儀式的神聖裝置"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:192
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:212
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:296
+msgid "Altar"
+msgstr "祭壇"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:196
+msgid "<gradient:#ff6745:#ff5555>Molten Mystery Metal</gradient>"
+msgstr "<gradient:#ff6745:#ff5555>熔融神祕金屬</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:197
+msgid "&6A conglomerate of different metals"
+msgstr "&6一種由不同金屬組成的聚合物"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:198
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:204
+msgid "Transmutation Resource"
+msgstr "轉化資源"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:202
+msgid "<gradient:#ff6745:#ff5555>Mystery Metal Ingot</gradient>"
+msgstr "<gradient:#ff6745:#ff5555>神秘金屬錠</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:203
+msgid "&6Contains many metals"
+msgstr "&6內含了多種金屬物質"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:210
+msgid "<gradient:#57ebbe:#f6fa2a>Cosmic Cauldron</gradient>"
+msgstr "<gradient:#57ebbe:#f6fa2a>宇宙鍋釜</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:211
+msgid "&2An altar for brewing advanced potions"
+msgstr "&2用於釀造藥水的進階祭壇"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:218
+msgid "<gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"
+msgstr "<gradient:#6274e7:#8752a3>滲透藥水</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:220
+msgid "&6Absorbs your potion effects"
+msgstr "&6在&e右鍵點擊&6時將"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:221
+msgid "&6and stores them in a bottle on &eRight Click"
+msgstr "&6你身上的藥水效果存入瓶中"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:222
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:254
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:287
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:71
+msgid "Potion"
+msgstr "藥水"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:252
+msgid "<gradient:#2ddae0:#31f876>Benevolent Brew</gradient>"
+msgstr "<gradient:#2ddae0:#31f876>仁慈釀造</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:285
+msgid "<gradient:#ff5555:#ffa012>Malevolent Concoction</gradient>"
+msgstr "<gradient:#ff5555:#ffa012>惡毒的混合物</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:292
+msgid "<gradient:#f78770:#ff607b>Altar of Infusion</gradient>"
+msgstr "<gradient:#f78770:#ff607b>灌注祭壇</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:293
+msgid "&5Adds powerful effects to tools"
+msgstr "&5對物品新增強大的效果"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:294
+msgid "&7Only works on gold, iron, diamond, netherite and"
+msgstr "&7僅對鐵、金、鑽石、獄髓的裝備有用"
+
+#: main/java/me/apeiros/alchimiavitae/setup/AlchimiaItems.java:295
+msgid "&7gear, as well as fishing rods, bows, and crossbows"
+msgstr "&7同樣也能在釣竿、弓和弩上用"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:64
+msgid "&bAny Mob"
+msgstr "&b任何生物"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:65
+msgid "&7Wither Skeletons and"
+msgstr "&7凋零骷髏和"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:66
+msgid "&7Withers have a chance"
+msgstr "&7凋零將會有"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:67
+msgid "&7to drop more souls..."
+msgstr "&7額外的機率掉落更多靈魂……"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:177
+msgid "Manipulation of life force"
+msgstr "操縱生命"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:182
+msgid "Powerful plants"
+msgstr "強大的植物"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:187
+msgid "Powerful powder"
+msgstr "強大的粉末"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:192
+msgid "Pure crystalline energy"
+msgstr "純粹的結晶能量"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:197
+msgid "Mystical metals"
+msgstr "神秘金屬"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:202
+msgid "The Ancient Altar's lost cousin"
+msgstr "古代祭壇的失散兄弟"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:207
+msgid "Amalgam"
+msgstr "混合物"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:212
+msgid "Advanced brewery"
+msgstr "進階釀造"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:217
+msgid "Absorbing and reflecting"
+msgstr "吸收和反射"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:222
+msgid "A blessing from Gaia herself"
+msgstr "蓋亞女神親自賜予的祝福"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:227
+msgid "A demonic liquid"
+msgstr "一種惡魔液體"
+
+#: main/java/me/apeiros/alchimiavitae/setup/Setup.java:232
+msgid "Infusion"
+msgstr "注入物"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AbstractCrafter.java:201
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:265
+msgid "<red>That recipe is invalid!"
+msgstr "<red>無效配方！"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:83
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:85
+msgid "&a&oA gold, iron, diamond,"
+msgstr "&a&o金、鐵、鑽石"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:83
+msgid "&a&oor netherite axe or sword"
+msgstr "&a&o或是獄髓的斧頭或劍"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:84
+msgid "&a&oA bow or crossbow"
+msgstr "&a&o弓或弩"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:85
+msgid "&a&oor netherite hoe"
+msgstr "&a&o或是獄髓的鋤頭"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:86
+msgid "&a&oA gold, iron, diamond, or"
+msgstr "&a&o金、鐵、鑽石或"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:86
+msgid "&a&onetherite chestplate"
+msgstr "&a&o獄髓的胸甲"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:87
+msgid "&a&oA fishing rod"
+msgstr "&a&o釣竿"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:277
+msgid "<red>There is nothing to infuse!"
+msgstr "<red>沒有東西可以被注入！"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:283
+msgid "<red>You cannot infuse that item!"
+msgstr "<red>你不能注入此物品！"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:291
+msgid "<red>This item already has an infusion!"
+msgstr "<red>這個物品已經被注入過！"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:297
+msgid "<red>You cannot apply that infusion to this item!"
+msgstr "<red>你不能套用這個注入到此物品上！"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:309
+msgid "<gray>Infusion:"
+msgstr "<gray>注入物："
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:405
+msgid "<red><bold>Destructive Criticals"
+msgstr "<red><bold>破壞性爆擊"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:407
+msgid "&c&lDestructive Criticals"
+msgstr "&c&l破壞性爆擊"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:408
+msgid "&4Grants a small chance to give your opponent"
+msgstr "&4小機率在爆擊時"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:409
+msgid "&4negative status effects on a critical hit,"
+msgstr "&4給予對手負面效果，"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:410
+msgid "&4as well as deal additional damage to armor."
+msgstr "&4以及對盔甲的額外傷害。"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:414
+msgid "<aqua>Phantom Criticals"
+msgstr "<aqua>幻影爆擊"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:416
+msgid "&bPhantom Criticals"
+msgstr "&b幻影爆擊"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:417
+msgid "&7Grants a small chance to deal extra damage"
+msgstr "&7小機率在爆擊時"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:418
+msgid "&7on a critical hit, which bypasses armor"
+msgstr "&7忽略盔甲造成額外傷害"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:424
+msgid "<dark_green>Forceful"
+msgstr "<dark_green>強力性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:426
+msgid "&2Forceful"
+msgstr "&2強力性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:427
+msgid "&2Grants the ability to fire arrows that"
+msgstr "&2給予在發射箭矢時"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:428
+msgid "&2travel further and deal more damage"
+msgstr "&2能夠飛的更遠與造成更多傷害"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:432
+msgid "<red>Healing"
+msgstr "<red>治療性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:434
+msgid "&cHealing"
+msgstr "&c治療性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:435
+msgid "&cGrants the ability to heal hit"
+msgstr "&c給予能夠在擊中目標時"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:436
+msgid "&ctargets instead of harming them"
+msgstr "&c治療而不是傷害它們"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:440
+msgid "<light_purple>True Aim"
+msgstr "<light_purple>真實瞄準"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:442
+msgid "&dTrue Aim"
+msgstr "&d真實瞄準"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:443
+msgid "&5Grants the ability to fire arrows"
+msgstr "&5給予能夠發射出箭矢"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:444
+msgid "&5that are not affected by gravity"
+msgstr "&5而不受到重力影響"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:448
+msgid "<dark_red><bold>Volatility"
+msgstr "<dark_red><bold>揮發性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:450
+msgid "&4&lVolatility"
+msgstr "&4&l揮發性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:451
+msgid "&cGrants the ability to shoot fireballs"
+msgstr "&c給予能夠發射火球的能力"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:457
+msgid "<gold><bold>Battery of Totems"
+msgstr "<gold><bold>圖騰電池"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:459
+msgid "&6&lTotem Battery"
+msgstr "&6&l圖騰電池"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:460
+msgid "&6Stores up to 8 Totems of Undying which will resurrect you"
+msgstr "&6儲存最多八個能讓你復活的圖騰"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:461
+msgid "&eStore a totem by &7&lShift-Right-Clicking &ewhile holding"
+msgstr "&e當穿戴著有注入此注入物的盔甲時"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:462
+msgid "&eone and while an infused chestplate is worn"
+msgstr "&e拿著不死圖騰按 &7&lShift-右鍵點擊 &e來儲存"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:468
+msgid "<green>Knockback"
+msgstr "<green>擊退性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:470
+msgid "&aKnockback"
+msgstr "&a擊退性"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:471
+msgid "&aPushes targets away instead"
+msgstr "&a將目標推開"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:472
+msgid "&aof pulling them towards you"
+msgstr "&a而非拉近你自己"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:478
+msgid "<green>Automatic Re-plant"
+msgstr "<green>自動化重種"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:480
+msgid "&aAutomatic Re-plant"
+msgstr "&a自動化重種"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:481
+msgid "&2Grants the ability to automatically replant"
+msgstr "&2給予自動重新種植"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/crafters/AltarOfInfusion.java:482
+msgid "&2fully grown crops when harvesting them"
+msgstr "&2完全成熟的農作物"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/general/SoulCollector.java:42
+msgid "<red>You cannot hurt a player using the Soul Collector!"
+msgstr "<red>你不能使用靈魂收集者傷害玩家！"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:53
+msgid "<red>There are no effects to absorb!"
+msgstr "<red>沒有藥水效果可以被吸收！"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:68
+msgid "<gradient:#6fe3e1:#53e6a6>Coruscating Potion</gradient>"
+msgstr "<gradient:#6fe3e1:#53e6a6>閃耀藥水</gradient>"
+
+#: main/java/me/apeiros/alchimiavitae/setup/items/potions/PotionOfOsmosis.java:70
+msgid ""
+"<green>Created from a <gradient:#6274e7:#8752a3>Potion of Osmosis</gradient>"
+msgstr "<green>由</green><gradient:#6274e7:#8752a3>滲透藥水</gradient><green>製作而成</green>"
